@@ -1,6 +1,14 @@
 import Layout from '@/components/Layout'
+import { useState } from 'react'
 
 export default () => {
+  const [btnLeft, setBtnLeft] = useState(true)
+  const [formDirty, setFormDirty] = useState(true)
+
+  const handleButtonHover = () => {
+    setBtnLeft(!btnLeft)
+  }
+
   return (
     <Layout>
       <div className="m-auto max-w-screen-lg">
@@ -67,12 +75,19 @@ export default () => {
               id="message"
             ></textarea>
           </div>
-          <button
-            className="w-fit self-end rounded-full border border-solid border-black px-5 py-2.5 text-center font-light hover:bg-black hover:text-white"
-            type="submit"
-          >
-            Send Message
-          </button>
+          <div className="relative h-36 w-full">
+            <button
+              className={`absolute box-content w-fit rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all ${
+                btnLeft
+                  ? 'left-0 -translate-x-0'
+                  : 'left-full -translate-x-full'
+              } ${formDirty ? '' : 'hover:bg-black hover:text-white'}`}
+              onMouseEnter={() => handleButtonHover()}
+              type="submit"
+            >
+              Send Message
+            </button>
+          </div>
         </form>
       </div>
     </Layout>
