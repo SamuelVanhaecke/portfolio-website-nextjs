@@ -1,12 +1,13 @@
-// import { NavLink } from 'react-router-dom'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
+
+import dropdownArrow from '../../public/images/nav/dropdown-arrow.svg'
 
 export default () => {
   const router = useRouter()
   return (
-    <nav className="m-auto mt-10 mb-24 flex max-w-screen-2xl justify-between">
+    <nav className="relative m-auto mt-10 mb-24 flex max-w-screen-2xl justify-between">
       <Link href="/">
         <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>
       </Link>
@@ -35,17 +36,33 @@ export default () => {
             Portfolio
           </Link>
         </li>
-        <li>
-          <Link
-            href="/portfolio"
-            className={
-              router.pathname == '/socials'
-                ? 'border-b border-black font-light'
-                : 'font-light'
-            }
-          >
-            Socials
-          </Link>
+        <li className="flex flex-col items-center">
+          <button className="peer flex items-center gap-1 font-light">
+            Socials<Image src={dropdownArrow} alt="arrow pointing down"></Image>
+          </button>
+          <div className="absolute hidden flex-col items-center pt-10 hover:flex peer-hover:flex">
+            <a
+              className="px-5 py-1 font-light hover:font-medium"
+              href="https://github.com/SamuelVanhaecke"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              className="px-5 py-1 font-light hover:font-medium"
+              href="https://www.linkedin.com/in/samuel-vanhaecke/"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="px-5 py-1 font-light hover:font-medium"
+              href="#"
+              target="_blank"
+            >
+              Instagram
+            </a>
+          </div>
         </li>
         <li>
           <Link

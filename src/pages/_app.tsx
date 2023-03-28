@@ -15,7 +15,9 @@ const ilyas = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.variable} ${ilyas.variable} font-sans`}>
+    <main
+      className={`${inter.variable} ${ilyas.variable} relative overflow-x-hidden font-sans`}
+    >
       <Component {...pageProps} />
     </main>
   )

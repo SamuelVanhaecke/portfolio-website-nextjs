@@ -75,7 +75,9 @@ export default () => {
               id="message"
             ></textarea>
           </div>
-          <div className="relative h-36 w-full">
+          {/* TODO: Add a checkbox for GDPR  */}
+          {/* TODO: fix button animation bug */}
+          <div className="relative w-full">
             <button
               className={`absolute box-content w-fit rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all ${
                 btnLeft
