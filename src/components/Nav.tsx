@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 export default () => {
   const router = useRouter()
   return (
-    <nav className="m-auto mt-10 flex max-w-screen-2xl justify-between">
+    <nav className="m-auto mt-10 mb-24 flex max-w-screen-2xl justify-between">
       <Link href="/">
         <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>
       </Link>

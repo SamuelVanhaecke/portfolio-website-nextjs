@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Nav from '../components/Nav'
 // import ProjectSlider from "../components/ProjectSlider";
 import Footer from '../components/Footer'
+import Layout from '../components/Layout'
 
 // Images
 import blueGradient from '../../public/images/blue_big.png'
@@ -14,8 +15,7 @@ import me from '../../public/images/me_bw.png'
 
 export default () => {
   return (
-    <main className="relative overflow-x-hidden">
-      <Nav />
+    <Layout>
       <div className="h-screen">
         <div className="absolute top-0 -z-10 flex h-screen w-screen flex-col items-center justify-center">
           <h1 className="text-3x1 text-center font-ilyas text-9xl uppercase">
@@ -44,7 +44,6 @@ export default () => {
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         {/* <ProjectSlider /> */}
       </div>
-      <Footer />
-    </main>
+    </Layout>
   )
 }

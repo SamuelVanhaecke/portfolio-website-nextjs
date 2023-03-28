@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default () => {
   return (
-    <div className="m-auto mt-20 mb-6 grid h-96 max-w-screen-2xl grid-cols-[130px_minmax(900px,_1fr)_130px] items-end gap-24 border-t border-black pt-6">
+    <div className="m-auto mt-36 mb-6 grid h-96 max-w-screen-2xl grid-cols-[130px_minmax(900px,_1fr)_130px] items-end gap-24 border-t border-black pt-6">
       <div className="flex h-fit content-end justify-center rounded-full border border-black p-4 hover:h-full hover:cursor-pointer">
         <Image className="h-fit" src={topArrow} alt="" />
       </div>
