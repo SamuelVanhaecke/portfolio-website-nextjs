@@ -2,11 +2,12 @@
   {
     "id": "1",
     "title": "Beerpong",
+    "description": "Amet ipsum laboris aliqua aliquip Lorem est cillum sunt sit ut nostrud deserunt incididunt excepteur. Officia occaecat velit minim quis enim minim est reprehenderit. Incididunt elit aliqua cupidatat ut aliquip do veniam labore aliquip minim dolor eu do nulla sit. Qui anim consequat excepteur veniam non tempor ut duis qui proident duis elit. Commodo irure dolor sit et tempor ullamco incididunt est exercitation tempor nisi anim. Ex ullamco ad sunt ex do.",
     "image": "https://i.imgur.com/rLsBDlM.png",
     "alt": "Project 1",
     "width": 619,
     "height": 400,
-    "tags": ["React", "Next.js", "Tailwind CSS"]
+    "tags": ["Installation", "Open Frameworks", "Unity"]
   },
   {
     "id": "2",
