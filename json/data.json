@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Beerpong",
+    "image": "https://i.imgur.com/rLsBDlM.png",
+    "alt": "Project 1",
+    "width": 619,
+    "height": 400,
+    "tags": ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    "id": "2",
+    "title": "Lorem Ipsum",
+    "image": "https://i.imgur.com/1aGsQB4.png",
+    "alt": "Project 2",
+    "width": 1648,
+    "height": 2124,
+    "tags": ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    "id": "3",
+    "title": "Suuuu",
+    "image": "https://i.imgur.com/1aGsQB4.png",
+    "alt": "Project 3",
+    "width": 1920,
+    "height": 1080,
+    "tags": ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    "id": "4",
+    "title": "Jabro",
+    "image": "https://i.imgur.com/1aGsQB4.png",
+    "alt": "Project 4",
+    "width": 1920,
+    "height": 1080,
+    "tags": ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    "id": "5",
+    "title": "Ikke ni weet",
+    "image": "https://i.imgur.com/1aGsQB4.png",
+    "alt": "Project 5",
+    "width": 1920,
+    "height": 1080,
+    "tags": ["React", "Next.js", "Tailwind CSS"]
+  }
+]

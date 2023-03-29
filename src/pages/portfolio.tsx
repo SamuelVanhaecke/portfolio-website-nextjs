@@ -1,57 +1,20 @@
 import Image from 'next/image'
+import useSWR from 'swr'
 
 // components
 import Layout from '@/components/Layout'
+import Link from 'next/link'
+
+const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 export default () => {
-  // create data variable and set it to dummy json
-  const data = [
-    {
-      id: 1,
-      title: 'Project 1',
-      image: 'https://i.imgur.com/rLsBDlM.png',
-      alt: 'Project 1',
-      width: 619,
-      height: 400,
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
-    },
-    {
-      id: 2,
-      title: 'Project 2',
-      image: 'https://i.imgur.com/1aGsQB4.png',
-      alt: 'Project 2',
-      width: 1648,
-      height: 2124,
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
-    },
-    {
-      id: 3,
-      title: 'Project 3',
-      image: 'https://i.imgur.com/1aGsQB4.png',
-      alt: 'Project 3',
-      width: 1920,
-      height: 1080,
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
-    },
-    {
-      id: 4,
-      title: 'Project 4',
-      image: 'https://i.imgur.com/1aGsQB4.png',
-      alt: 'Project 4',
-      width: 1920,
-      height: 1080,
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
-    },
-    {
-      id: 5,
-      title: 'Project 5',
-      image: 'https://i.imgur.com/1aGsQB4.png',
-      alt: 'Project 5',
-      width: 1920,
-      height: 1080,
-      tags: ['React', 'Next.js', 'Tailwind CSS'],
-    },
-  ]
+  const { data, error } = useSWR('/api/staticdata', fetcher)
+
+  if (error) return <div>Failed to load</div>
+
+  if (!data) return <div>Loading...</div>
+
+  const projects = JSON.parse(data)
 
   const classNames = ['self-start', 'self-center', 'self-end']
 
@@ -63,11 +26,12 @@ export default () => {
           at my work
         </h1>
         <div className="flex flex-col">
-          {data.map(item => (
-            <div
-              className={`relative my-32 w-fit border border-solid border-black p-3 transition-all hover:-rotate-1 hover:cursor-pointer ${
+          {projects.map(item => (
+            <Link
+              className={`relative my-32 w-fit border border-solid border-black p-3 transition-all hover:-rotate-1 ${
                 classNames[Math.floor(Math.random() * classNames.length)]
               }`}
+              href={`/project/${item.title}`}
               key={item.id}
             >
               <Image
@@ -87,7 +51,7 @@ export default () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
