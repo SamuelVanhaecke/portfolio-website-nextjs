@@ -40,6 +40,7 @@ export default () => {
             at my work
           </h1>
           <div className="flex flex-col">
+            {/* @ts-ignore */}
             {projects.map(item => (
               <Link
                 className={`relative my-32 w-fit border border-solid border-black p-3 transition-all hover:-rotate-1 ${
@@ -56,6 +57,7 @@ export default () => {
                   height={item.height}
                 />
                 <ul className="absolute bottom-5 right-5 flex gap-3">
+                  {/* @ts-ignore */}
                   {item.tags.map(tag => (
                     <li
                       className="rounded-full border border-white py-[5px] px-4 text-sm font-light text-white"
