@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-import blueGradient from '../../public/images/blue_big.png'
+import blueGradient from '../../public/images/blue_big.webp'
 
 export default () => {
   const [position, setPosition] = useState({

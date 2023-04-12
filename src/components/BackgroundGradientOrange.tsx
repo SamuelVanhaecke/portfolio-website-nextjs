@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-import orangeGradient from '../../public/images/orange_big.png'
+import orangeGradient from '../../public/images/orange_big.webp'
 
 export default () => {
   const [position, setPosition] = useState({
