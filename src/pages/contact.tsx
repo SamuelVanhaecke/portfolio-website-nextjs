@@ -103,15 +103,15 @@ export default () => {
   return (
     <Layout>
       {/* <BackgroundGradientOrange /> */}
-      <div className="m-auto max-w-screen-lg">
-        <h1 className="mb-20 font-ilyas text-8xl uppercase">
+      <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
+        <h1 className="mb-12 md:mb-20 font-ilyas text-6xl uppercase md:text-7xl lg:text-8xl">
           Let's work <br /> together
         </h1>
         <form
           className="m-auto mb-64 flex flex-col gap-12"
           onSubmit={handleForm}
         >
-          <div className="flex w-full flex-row gap-6">
+          <div className="flex w-full flex-col gap-12 md:flex-row md:gap-6">
             <div className="flex w-full flex-col">
               <label className="sr-only" htmlFor="first-name">
                 First Name
@@ -149,7 +149,7 @@ export default () => {
               />
             </div>
           </div>
-          <div className="flex w-full flex-row gap-6">
+          <div className="flex w-full flex-col gap-12 md:flex-row md:gap-6">
             <div className="flex w-full flex-col">
               <label className="sr-only" htmlFor="email">
                 Email

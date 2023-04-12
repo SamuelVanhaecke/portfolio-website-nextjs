@@ -25,10 +25,6 @@ export default () => {
           >
             {isOpen ? (
               <svg viewBox="0 0 24 24">
-                <path d="M2 6h20v2H2V6zm0 5h20v2H2v-2zm0 5h20v2H2v-2z" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24">
                 <line
                   x1="4"
                   y1="12"
@@ -45,6 +41,10 @@ export default () => {
                   stroke="black"
                   stroke-width="2"
                 />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24">
+                <path d="M2 6h20v2H2V6zm0 5h20v2H2v-2zm0 5h20v2H2v-2z" />
               </svg>
             )}
           </button>
