@@ -1,15 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
+import useSWR from 'swr'
 
 // Components
 import Nav from '../components/Nav'
-// import ProjectSlider from "../components/ProjectSlider";
+import ProjectSlider from '../components/ProjectSlider'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
 // Images
-import blueGradient from '../../public/images/blue_big.png'
-import orangeGradient from '../../public/images/orange_big.png'
+import blueGradient from '../../public/images/blue_big.webp'
+import orangeGradient from '../../public/images/orange_big.webp'
 import line from '../../public/images/readmore_line.png'
 import me from '../../public/images/me_bw.png'
 
@@ -42,7 +43,7 @@ export default () => {
       </div>
       <div className="m-auto -mt-0 max-w-screen-2xl">
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
-        {/* <ProjectSlider /> */}
+        <ProjectSlider isVisible={true} />
       </div>
     </Layout>
   )
