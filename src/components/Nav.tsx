@@ -116,7 +116,7 @@ export default () => {
             href="/contact"
             // set default classname and add active classname
             className={
-              'rounded-full border border-solid border-black px-5 py-2.5 font-light hover:bg-black hover:text-white'
+              'rounded-full border border-solid border-black bg-opacity-0 px-5 py-2.5 font-light transition-all hover:bg-black ease-out duration-150 hover:bg-opacity-100 hover:text-white'
             }
           >
             Contact
