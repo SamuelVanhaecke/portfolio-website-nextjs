@@ -13,6 +13,7 @@ import blueGradient from '../../public/images/blue_big.webp'
 import orangeGradient from '../../public/images/orange_big.webp'
 import line from '../../public/images/readmore_line.png'
 import me from '../../public/images/me_bw.png'
+import { motion } from 'framer-motion'
 
 export default () => {
   return (
@@ -42,10 +43,16 @@ export default () => {
           <Image className="" src={me} alt="" />
         </div>
       </div>
-      <div className="m-auto max-w-screen-2xl px-8 md:px-24 lg:px-12 xl:px-0">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: 'circOut', delay: 0.1 }}
+        viewport={{ once: true }}
+        className="m-auto max-w-screen-2xl px-8 md:px-24 lg:px-12 xl:px-0"
+      >
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
-      </div>
+      </motion.div>
     </Layout>
   )
 }

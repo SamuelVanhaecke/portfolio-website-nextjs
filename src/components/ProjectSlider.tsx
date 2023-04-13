@@ -104,7 +104,6 @@ export default ({ isVisible }) => {
               key={currentProject.title}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
             >
               <div className="flex flex-col items-center">
                 <Image
@@ -119,7 +118,7 @@ export default ({ isVisible }) => {
                 </h2>
                 <ul className="flex max-w-sm flex-row flex-wrap gap-2 md:gap-4">
                   {currentProject.tags.map((tag: string) => (
-                    <li className="rounded-full border border-black text-xs text-black px-3 py-1 md:text-sm">
+                    <li className="rounded-full border border-black px-3 py-1 text-xs text-black md:text-sm">
                       {tag}
                     </li>
                   ))}

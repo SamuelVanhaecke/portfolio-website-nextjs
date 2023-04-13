@@ -68,7 +68,6 @@ export default () => {
           >
             Home
           </Link>
-          <span className="hidden peer-hover:block">.</span>
         </li>
         <li className="transition-all hover:pb-1">
           <Link
@@ -114,9 +113,8 @@ export default () => {
         <li>
           <Link
             href="/contact"
-            // set default classname and add active classname
             className={
-              'rounded-full border border-solid border-black bg-opacity-0 px-5 py-2.5 font-light transition-all hover:bg-black ease-out duration-150 hover:bg-opacity-100 hover:text-white'
+              'rounded-full border border-solid border-black bg-opacity-0 px-5 py-2.5 font-light transition-all duration-150 ease-out hover:bg-black hover:bg-opacity-100 hover:text-white'
             }
           >
             Contact
