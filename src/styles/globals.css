@@ -5,6 +5,10 @@
     @apply text-black;
     @apply bg-white;
   }
+
+  ::selection {
+    @apply bg-black text-white;
+  }
 }
 
 @tailwind components;

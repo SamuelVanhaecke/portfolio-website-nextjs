@@ -57,7 +57,7 @@ export default () => {
           isOpen ? 'flex' : 'hidden'
         } mt-8 w-full flex-col items-center justify-center gap-10 md:static md:mt-0 md:flex md:h-auto md:w-auto md:flex-row md:gap-24 md:bg-transparent`}
       >
-        <li>
+        <li className="transition-all hover:pb-1">
           <Link
             href="/"
             className={
@@ -68,8 +68,9 @@ export default () => {
           >
             Home
           </Link>
+          <span className="hidden peer-hover:block">.</span>
         </li>
-        <li>
+        <li className="transition-all hover:pb-1">
           <Link
             href="/portfolio"
             className={
