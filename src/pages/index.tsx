@@ -18,8 +18,9 @@ export default () => {
   return (
     <Layout>
       <div className="h-screen">
-        <div className="absolute top-0 -z-10 flex h-screen w-screen flex-col items-center justify-center">
-          <h1 className="text-3x1 text-center font-ilyas text-9xl uppercase">
+        <div className="absolute top-40 -z-10 flex h-screen w-screen flex-col items-center md:top-0 md:justify-center">
+          {/* <h1 className="text-center font-ilyas text-9xl uppercase"> */}
+          <h1 className="mb-12 text-center font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
             Webdesign <br></br>Creative Development<br></br>Graphic Design
           </h1>
         </div>
@@ -41,7 +42,7 @@ export default () => {
           <Image className="" src={me} alt="" />
         </div>
       </div>
-      <div className="m-auto -mt-0 max-w-screen-2xl">
+      <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
       </div>
