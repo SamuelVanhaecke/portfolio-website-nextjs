@@ -55,10 +55,36 @@ export default ({ isVisible }) => {
   }
 
   return (
-    <div className="m-auto my-20 flex w-full items-center justify-between">
+    <div className="m-auto my-16 flex w-full flex-col items-center justify-between lg:flex-row">
+      <div className="mb-8 flex w-full justify-between lg:hidden">
+        <div onClick={() => handlePrevious()} className="h-fit">
+          <svg
+            width="66"
+            height="39.33"
+            viewBox="0 0 66 39.33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M66 19.67L1 19.67" stroke="#27272B" />
+            <path d="M19.67 39.33L1 19.67L19.67 1" stroke="#27272B" />
+          </svg>
+        </div>
+        <div onClick={() => handleNext()} className="h-fit">
+          <svg
+            width="66"
+            height="39.33"
+            viewBox="0 0 66 39.33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 19.67H65" stroke="#27272B" />
+            <path d="M45.67 1L65 19.67L45.67 38.33" stroke="#27272B" />
+          </svg>
+        </div>
+      </div>
       <div
         onClick={() => handlePrevious()}
-        className="h-fit transition-all hover:-translate-x-3 hover:cursor-pointer"
+        className="hidden h-fit transition-all hover:-translate-x-3 hover:cursor-pointer lg:block"
       >
         <svg
           width="198"
@@ -86,14 +112,14 @@ export default ({ isVisible }) => {
                   alt={''}
                   width={currentProject.width}
                   height={currentProject.height}
-                  className="h-[30vh] w-auto border border-black p-3"
+                  className="h-auto w-full border border-black p-3 md:h-[40vh] lg:w-auto"
                 />
-                <h2 className="mt-12 mb-6 font-ilyas text-5xl uppercase">
+                <h2 className="mt-8 mb-6 font-ilyas text-5xl uppercase md:mt-12">
                   {currentProject.title}
                 </h2>
-                <ul className="flex max-w-sm flex-row flex-wrap gap-4">
+                <ul className="flex max-w-sm flex-row flex-wrap gap-2 md:gap-4">
                   {currentProject.tags.map((tag: string) => (
-                    <li className="rounded-full border border-black px-3 py-1 text-black">
+                    <li className="rounded-full border border-black text-xs text-black px-3 py-1 md:text-sm">
                       {tag}
                     </li>
                   ))}
@@ -114,7 +140,7 @@ export default ({ isVisible }) => {
       )}
       <div
         onClick={() => handleNext()}
-        className="h-fit transition-all hover:translate-x-3 hover:cursor-pointer"
+        className="hidden h-fit transition-all hover:-translate-x-3 hover:cursor-pointer lg:block"
       >
         <svg
           width="198"

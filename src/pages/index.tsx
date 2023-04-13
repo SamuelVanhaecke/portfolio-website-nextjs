@@ -42,7 +42,7 @@ export default () => {
           <Image className="" src={me} alt="" />
         </div>
       </div>
-      <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
+      <div className="m-auto max-w-screen-2xl px-8 md:px-24 lg:px-12 xl:px-0">
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
       </div>
