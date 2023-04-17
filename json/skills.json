@@ -5,39 +5,39 @@
       "skills": [
         {
           "name": "JavaScript",
-          "level": "Expert"
+          "startDate": "2019-01-01"
         },
         {
           "name": "HTML / CSS",
-          "level": "Advanced"
+          "startDate": "2019-01-01"
         },
         {
           "name": "React / Next.js",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "MySQL",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Drupal",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Three.js",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         },
         {
           "name": "SASS / SCSS",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Tailwind CSS",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         },
         {
           "name": ".NET",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         }
       ]
     },
@@ -46,23 +46,23 @@
       "skills": [
         {
           "name": "Photoshop",
-          "level": "Expert"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Illustrator",
-          "level": "Advanced"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Figma",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Cinema 4D",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "After Effects",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         }
       ]
     },
@@ -71,23 +71,23 @@
       "skills": [
         {
           "name": "Git",
-          "level": "Expert"
+          "startDate": "2019-01-01"
         },
         {
           "name": "VSCode",
-          "level": "Advanced"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Trello",
-          "level": "Intermediate"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Notion",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         },
         {
           "name": "Figma",
-          "level": "Beginner"
+          "startDate": "2019-01-01"
         }
       ]
     }

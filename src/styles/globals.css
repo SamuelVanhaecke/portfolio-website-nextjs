@@ -1,5 +1,33 @@
 @tailwind base;
 
+@keyframes marque {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* make keyframes so its half of marque */
+@keyframes marque2 {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.animate-marquee {
+  animation: marque 10s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marque 10s linear infinite;
+  animation-delay: 5s;
+}
+
 @layer base {
   html {
     @apply text-black;
