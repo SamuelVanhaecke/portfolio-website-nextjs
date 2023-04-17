@@ -13,33 +13,37 @@ export default () => {
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-24">
           <div className="flex flex-col items-center gap-2 lg:items-start">
             <h3 className="mb-2 text-sm font-extralight">Content</h3>
-            <Link href="/" className="px-5 py-0.5 font-light">
+            <Link href="/" className="px-5 py-0.5 font-light lg:px-0">
               Home
             </Link>
-            <Link href="/portfolio" className="px-5 py-0.5 font-light">
+            <Link href="/portfolio" className="px-5 py-0.5 font-light lg:px-0">
               Portfolio
             </Link>
-            <Link href="/contact" className="px-5 py-0.5 font-light">
+            <Link href="/contact" className="px-5 py-0.5 font-light lg:px-0">
               Contact
             </Link>
           </div>
           <div className="flex flex-col items-center gap-2 lg:items-start">
             <h3 className="mb-2 text-sm font-extralight">Socials</h3>
             <a
-              className="px-5 py-0.5 font-light"
+              className="px-5 py-0.5 font-light lg:px-0"
               href="https://github.com/SamuelVanhaecke"
               target="_blank"
             >
               GitHub
             </a>
             <a
-              className="px-5 py-0.5 font-light"
+              className="px-5 py-0.5 font-light lg:px-0"
               href="https://www.linkedin.com/in/samuel-vanhaecke/"
               target="_blank"
             >
               LinkedIn
             </a>
-            <a className="px-5 py-0.5 font-light" href="#" target="_blank">
+            <a
+              className="px-5 py-0.5 font-light lg:px-0"
+              href="#"
+              target="_blank"
+            >
               Instagram
             </a>
           </div>
