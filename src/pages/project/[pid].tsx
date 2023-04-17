@@ -1,27 +1,62 @@
 //useSWR allows the use of SWR inside function components
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import SwiperCore, { Navigation } from 'swiper'
 
 import Layout from '@/components/Layout'
 
+import 'swiper/css'
+import 'swiper/css/navigation'
+
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
+
+interface Project {
+  id: string
+  title: string
+  description: string
+  coverImage: string
+  coverImageDimensions: {
+    width: number
+    height: number
+  }
+  projectVideo: string
+  alt: string
+  tags: string[]
+  highlighted: boolean
+  quote: string
+  caroussel: {
+    images: {
+      src: string
+      alt: string
+    }[]
+  }
+}
+
+type Projects = Project[]
 
 export default () => {
   const router = useRouter()
+  const swiper = useSwiper()
+
   const { pid } = router.query
 
-  const { data, error } = useSWR('/api/staticdata', fetcher)
+  const { data, error } = useSWR('/api/projectsdata', fetcher)
+
+  const prevRef = useRef<HTMLDivElement>(null)
+  const nextRef = useRef<HTMLDivElement>(null)
 
   //Handle the error state
   if (error) return <div>Failed to load</div>
   //Handle the loading state
   if (!data) return <div>Loading...</div>
 
-  const projects = JSON.parse(data)
+  const projects: Projects = JSON.parse(data)
 
-  const project = projects.find((project: any) => project.title === pid)
+  // project is of the type Project
+  const project = projects.find(project => project.title === pid)
 
   console.log(project)
 
@@ -44,13 +79,64 @@ export default () => {
             ))}
           </div>
           <div className="my-24 border border-black p-10">
-            <Image
-              className="w-full"
-              src={project.image}
-              alt={project.alt}
-              width={project.width}
-              height={project.height}
-            />
+            {project.projectVideo ? (
+              <div className="relative h-0 pb-[56.25%]">
+                <iframe
+                  src="https://player.vimeo.com/video/817573778?h=40e940145f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  // className="h-full w-full"
+                  style={{
+                    position: 'absolute',
+                    // top: 0,
+                    // left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="3DEV_PPP_vanhaeckeSamuel_mov-to-show-off"
+                ></iframe>
+              </div>
+            ) : (
+              <Image
+                className="w-full"
+                src={project.coverImage}
+                alt={project.alt}
+                width={project.coverImageDimensions.width}
+                height={project.coverImageDimensions.height}
+              />
+            )}
+          </div>
+          <div className="my-48">
+            <h2 className="m-auto w-2/3 text-center font-ilyas text-6xl uppercase">
+              {project.quote}
+            </h2>
+          </div>
+          {/* TODO: fix slidesPerView Auto */}
+          <div>
+            {/* add 2 buttons to navigate swiper */}
+
+            <Swiper
+              spaceBetween={24}
+              slidesPerView={'auto'}
+              navigation
+              pagination
+            >
+              <button onClick={() => swiper.slidePrev()}>Prev</button>
+              {project.caroussel.images.map((image: any) => (
+                <SwiperSlide key={image.src}>
+                  <div className="h-[500px] w-fit border border-black p-3">
+                    <Image
+                      className="h-full w-auto"
+                      src={image.src}
+                      alt={image.alt}
+                      width="600"
+                      height="400"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       ) : (
