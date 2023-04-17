@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "title": "Beerpong",
+    "description": "The Beer Pong Projection Table is a creative development project that combines traditional beer pong gameplay with cutting-edge technology. The table features a projected playfield that reacts to the ball's movement, creating an immersive and engaging experience for players. The AI system integrated into the table uses a camera to track the movement of the ball and determine if a player has scored a point, providing real-time feedback and scoring. The project utilizes both Unity and Open Frameworks to create a seamless and interactive experience for players. With its innovative design and advanced technology, the Beer Pong Projection Table is sure to be a hit at parties, events, and gatherings.",
+    "coverImage": "https://i.imgur.com/rLsBDlM.png",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "https://player.vimeo.com/video/817573778?h=40e940145f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Project 1",
+    "tags": ["Installation", "Open Frameworks", "Unity"],
+    "highlighted": true,
+    "quote": "Traditional beer pong meets modern technology for the ultimate party game upgrade",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/pNVy8PP.jpg",
+          "alt": "Project 1"
+        },
+        {
+          "src": "https://i.imgur.com/VSf0ry0.jpg",
+          "alt": "Project 1"
+        },
+        {
+          "src": "https://i.imgur.com/gxDOjfO.jpg",
+          "alt": "Project 1"
+        },
+        {
+          "src": "https://i.imgur.com/7Yh9K2c.png",
+          "alt": "Project 1"
+        },
+        {
+          "src": "https://i.imgur.com/mjyQTVX.jpg",
+          "alt": "Project 1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "title": "The Great Escape",
+    "description": "The Great Escape is a VR experience that allows users to explore a surreal and mysterious world. The project was created using Unity and Oculus Quest. The user is transported to a strange and unfamiliar world, where they must solve puzzles and navigate their way through the environment. The project was created as part of the 2020 Oculus Quest Jam, and was awarded the \"Best Use of Sound\" prize.",
+    "coverImage": "https://i.imgur.com/7Yh9K2c.png",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "",
+    "alt": "Project 2",
+    "tags": ["VR", "Unity", "Oculus Quest"],
+    "highlighted": true,
+    "quote": "A surreal and mysterious VR experience",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/pNVy8PP.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/VSf0ry0.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/gxDOjfO.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/7Yh9K2c.png",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/mjyQTVX.jpg",
+          "alt": "Project 2"
+        }
+      ]
+    }
+  }
+]

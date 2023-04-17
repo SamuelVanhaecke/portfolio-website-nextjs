@@ -5,6 +5,7 @@ import useSWR from 'swr'
 // Components
 import Nav from '../components/Nav'
 import ProjectSlider from '../components/ProjectSlider'
+import Skills from '../components/Skills'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
@@ -52,6 +53,14 @@ export default () => {
       >
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: 'circOut', delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <Skills />
       </motion.div>
     </Layout>
   )

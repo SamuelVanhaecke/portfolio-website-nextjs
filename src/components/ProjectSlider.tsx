@@ -14,18 +14,43 @@ import Link from 'next/link'
 
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
+interface Project {
+  id: string
+  title: string
+  description: string
+  coverImage: string
+  coverImageDimensions: {
+    width: number
+    height: number
+  }
+  projectVideo: string
+  alt: string
+  tags: string[]
+  highlighted: boolean
+  quote: string
+  caroussel: {
+    images: {
+      src: string
+      alt: string
+    }[]
+  }
+}
+
+type Projects = Project[]
+
 // @ts-ignore
 export default ({ isVisible }) => {
-  const { data, error } = useSWR('/api/staticdata', fetcher)
-  const [currentProject, setCurrentProject] = useState<any>()
-  const [highlightedProjects, setHighlightedProjects] = useState<any>()
+  const { data, error } = useSWR('/api/projectsdata', fetcher)
+  const [currentProject, setCurrentProject] = useState<Project>()
+  const [highlightedProjects, setHighlightedProjects] = useState<Projects>()
 
   useEffect(() => {
     if (data) {
-      const projects = JSON.parse(data)
+      const projects: Projects = JSON.parse(data)
       const highlightedProjects = projects.filter(
-        (project: any) => project.highlighted === true,
+        project => project.highlighted === true,
       )
+      // set hightlighted projects with type Project
       setHighlightedProjects(highlightedProjects)
       setCurrentProject(highlightedProjects[0])
       console.log(highlightedProjects[0].title)
@@ -34,23 +59,27 @@ export default ({ isVisible }) => {
 
   const handleNext = () => {
     console.log('handling next')
-    const currentIndex = highlightedProjects.indexOf(currentProject)
-    const nextIndex = currentIndex + 1
-    if (nextIndex < highlightedProjects.length) {
-      setCurrentProject(highlightedProjects[nextIndex])
-    } else {
-      setCurrentProject(highlightedProjects[0])
+    if (currentProject) {
+      const currentIndex = highlightedProjects!.indexOf(currentProject)
+      const nextIndex = currentIndex + 1
+      if (nextIndex < highlightedProjects!.length) {
+        setCurrentProject(highlightedProjects![nextIndex])
+      } else {
+        setCurrentProject(highlightedProjects![0])
+      }
     }
   }
 
   const handlePrevious = () => {
     console.log('handling previous')
-    const currentIndex = highlightedProjects.indexOf(currentProject)
-    const nextIndex = currentIndex - 1
-    if (nextIndex >= 0) {
-      setCurrentProject(highlightedProjects[nextIndex])
-    } else {
-      setCurrentProject(highlightedProjects[highlightedProjects.length - 1])
+    if (currentProject) {
+      const currentIndex = highlightedProjects!.indexOf(currentProject)
+      const nextIndex = currentIndex - 1
+      if (nextIndex >= 0) {
+        setCurrentProject(highlightedProjects![nextIndex])
+      } else {
+        setCurrentProject(highlightedProjects![highlightedProjects!.length - 1])
+      }
     }
   }
 
@@ -107,10 +136,10 @@ export default ({ isVisible }) => {
             >
               <div className="flex flex-col items-center">
                 <Image
-                  src={currentProject.image}
+                  src={currentProject.coverImage}
                   alt={''}
-                  width={currentProject.width}
-                  height={currentProject.height}
+                  width={currentProject.coverImageDimensions.width}
+                  height={currentProject.coverImageDimensions.height}
                   className="h-auto w-full border border-black p-3 md:h-[40vh] lg:w-auto"
                 />
                 <h2 className="mt-8 mb-6 font-ilyas text-5xl uppercase md:mt-12">

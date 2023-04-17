@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "name": "Development",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": "Expert"
+        },
+        {
+          "name": "HTML / CSS",
+          "level": "Advanced"
+        },
+        {
+          "name": "React / Next.js",
+          "level": "Intermediate"
+        },
+        {
+          "name": "MySQL",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Drupal",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Three.js",
+          "level": "Beginner"
+        },
+        {
+          "name": "SASS / SCSS",
+          "level": "Beginner"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": "Beginner"
+        },
+        {
+          "name": ".NET",
+          "level": "Beginner"
+        }
+      ]
+    },
+    {
+      "name": "Design",
+      "skills": [
+        {
+          "name": "Photoshop",
+          "level": "Expert"
+        },
+        {
+          "name": "Illustrator",
+          "level": "Advanced"
+        },
+        {
+          "name": "Figma",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Cinema 4D",
+          "level": "Intermediate"
+        },
+        {
+          "name": "After Effects",
+          "level": "Beginner"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "name": "Git",
+          "level": "Expert"
+        },
+        {
+          "name": "VSCode",
+          "level": "Advanced"
+        },
+        {
+          "name": "Trello",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Notion",
+          "level": "Beginner"
+        },
+        {
+          "name": "Figma",
+          "level": "Beginner"
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ import orangeGradient from '../../public/images/orange_big.png'
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 export default () => {
-  const { data, error } = useSWR('/api/staticdata', fetcher)
+  const { data, error } = useSWR('/api/projectsdata', fetcher)
 
   if (error) return <div>Failed to load</div>
 
@@ -51,16 +51,16 @@ export default () => {
               >
                 <Image
                   className="w-auto md:max-h-[50vh] md:min-h-[40vh] 2xl:max-h-[80vh] 2xl:min-h-[60vh]"
-                  src={item.image}
+                  src={item.coverImage}
                   alt={item.alt}
-                  width={item.width}
-                  height={item.height}
+                  width={item.coverImageDimensions.width}
+                  height={item.coverImageDimensions.height}
                 />
-                <ul className="absolute bottom-5 right-5 flex flex-row-reverse flex-wrap-reverse gap-3 md:flex-nowrap">
+                <ul className="absolute bottom-5 right-5 flex flex-row-reverse flex-wrap-reverse gap-3  md:flex-nowrap">
                   {/* @ts-ignore */}
                   {item.tags.map(tag => (
                     <li
-                      className="rounded-full border border-white py-1 px-4 text-xs font-light text-white md:py-[5px] md:text-sm"
+                      className="rounded-full border border-white bg-black bg-opacity-10 py-1 px-4 text-xs font-light text-white backdrop-blur-md md:py-[5px] md:text-sm"
                       key={tag}
                     >
                       {tag}
