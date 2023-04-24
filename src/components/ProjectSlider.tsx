@@ -140,7 +140,7 @@ export default ({ isVisible }) => {
                   alt={''}
                   width={currentProject.coverImageDimensions.width}
                   height={currentProject.coverImageDimensions.height}
-                  className="h-auto w-full border border-black p-3 md:h-[40vh] lg:w-auto"
+                  className="h-auto w-full border border-black p-5 md:h-[40vh] lg:w-auto"
                 />
                 <h2 className="mt-8 mb-6 font-ilyas text-5xl uppercase md:mt-12">
                   {currentProject.title}

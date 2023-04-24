@@ -52,7 +52,7 @@ export default () => {
                     key={skill.name}
                     className="relative cursor-default rounded-full border border-black"
                   >
-                    <div className="hover:bg-blur-0 bg-blur-sm h-full w-full rounded-full bg-white px-5 py-2 transition-all duration-500 hover:opacity-0">
+                    <div className="hover:bg-blur-0 bg-blur-sm h-full w-full rounded-full bg-white px-5 py-2 transition-all duration-300 hover:opacity-0">
                       <h3 className="text-xl font-light">{skill.name}</h3>
                     </div>
                     <div className="absolute left-0 top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden break-all rounded-full ">

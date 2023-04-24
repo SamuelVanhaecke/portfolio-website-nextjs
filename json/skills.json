@@ -46,15 +46,15 @@
       "skills": [
         {
           "name": "Photoshop",
-          "startDate": "2019-01-01"
+          "startDate": "2019-10-01"
         },
         {
           "name": "Illustrator",
-          "startDate": "2019-01-01"
+          "startDate": "2019-10-01"
         },
         {
           "name": "Figma",
-          "startDate": "2019-01-01"
+          "startDate": "2020-06-01"
         },
         {
           "name": "Cinema 4D",
@@ -62,7 +62,11 @@
         },
         {
           "name": "After Effects",
-          "startDate": "2019-01-01"
+          "startDate": "2020-10-01"
+        },
+        {
+          "name": "Adobe XD",
+          "startDate": "2019-10-01"
         }
       ]
     },
@@ -71,11 +75,11 @@
       "skills": [
         {
           "name": "Git",
-          "startDate": "2019-01-01"
+          "startDate": "2019-10-01"
         },
         {
           "name": "VSCode",
-          "startDate": "2019-01-01"
+          "startDate": "2019-10-01"
         },
         {
           "name": "Trello",
