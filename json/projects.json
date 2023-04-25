@@ -40,18 +40,18 @@
   },
   {
     "id": "2",
-    "title": "The Great Escape",
-    "description": "The Great Escape is a VR experience that allows users to explore a surreal and mysterious world. The project was created using Unity and Oculus Quest. The user is transported to a strange and unfamiliar world, where they must solve puzzles and navigate their way through the environment. The project was created as part of the 2020 Oculus Quest Jam, and was awarded the \"Best Use of Sound\" prize.",
+    "title": "Heartbeat of the Forest",
+    "description": "Heartbeat of the Forest was a collaborative project that I worked on with two other students during my final year of Devine. The project was commissioned by the research group “Future Through Design” at KASK School of Arts, with the aim of reconnecting people with nature in a world where such a connection is increasingly rare. We chose to use the Mariahove estate as our canvas, which provided us with access to one of the buildings and the vast surrounding grounds. Our vision was to create a hotel that would allow visitors to immerse themselves in nature by staying in one of our thematically designed rooms. Each room was carefully crafted to showcase the relationship between humans and nature, with a particular focus on the estate’s bat population, which was the subject of ongoing research by the KASK team. We aimed to encourage visitors to consider their impact on the ecosystem and to take steps towards sustainability. Our project successfully demonstrated the potential for design to foster a deeper connection between people and the natural world. Below, you can see an example of what one of our hotel rooms might have looked like.",
     "coverImage": "https://i.imgur.com/7Yh9K2c.png",
     "coverImageDimensions": {
       "width": 619,
       "height": 400
     },
-    "projectVideo": "",
-    "alt": "Project 2",
-    "tags": ["VR", "Unity", "Oculus Quest"],
+    "projectVideo": "https://player.vimeo.com/video/821014212?h=db4feb5baa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Bat Room",
+    "tags": ["Socket IO", "RaspberryPi", "Team Project"],
     "highlighted": true,
-    "quote": "A surreal and mysterious VR experience",
+    "quote": "Get in touch with nature and feel it's heartbeat",
     "caroussel": {
       "images": [
         {
@@ -73,6 +73,37 @@
         {
           "src": "https://i.imgur.com/mjyQTVX.jpg",
           "alt": "Project 2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "title": "Devine Takeover",
+    "description": "",
+    "coverImage": "https://i.imgur.com/sHoJYxf.jpg",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "https://player.vimeo.com/video/821024182?h=661b71ebec&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Floppy disks floating towards old Macintosh",
+    "tags": ["Cinema 4D", "Webdesign", "After Effects"],
+    "highlighted": true,
+    "quote": "3 dimensional design can bring something entirely new to the table",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/131hCbg.jpg",
+          "alt": "3D render of an old Macintosh"
+        },
+        {
+          "src": "https://i.imgur.com/UTpnrdL.jpg",
+          "alt": "3D render of a floppy disk on a metal socket"
+        },
+        {
+          "src": "https://i.imgur.com/fdN7bXC.jpg",
+          "alt": "3D render of a floppy disk with the Devine logo"
         }
       ]
     }
