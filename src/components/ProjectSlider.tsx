@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import Image from 'next/image'
 import useSWR from 'swr'
 import { motion, AnimatePresence } from 'framer-motion'
