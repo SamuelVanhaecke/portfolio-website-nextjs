@@ -12,7 +12,7 @@ export default () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative m-auto mt-10 mb-16 flex flex-col justify-between px-8 md:mb-24 md:flex-row md:px-16 xl:px-28 ">
+    <nav className="relative m-auto mt-10 mb-16 flex flex-col justify-between px-8 md:mb-24 md:flex-row md:px-16 xl:px-28">
       <div className="flex flex-row items-center justify-between">
         <Link href="/">
           <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>

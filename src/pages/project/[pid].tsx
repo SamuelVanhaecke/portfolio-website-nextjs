@@ -78,22 +78,22 @@ export default () => {
   return (
     <Layout>
       {project ? (
-        <div className="m-auto max-w-screen-2xl">
+        <div className="m-auto max-w-screen-2xl px-8 md:px-16 xl:px-28 2xl:px-0">
           <h1 className="mb-9 font-ilyas text-8xl uppercase">
             {project.title}
           </h1>
-          <p className="mb-7 w-1/2">{project.description}</p>
-          <div>
+          <p className="mb-7 w-full md:w-2/3 xl:w-1/2">{project.description}</p>
+          <div className="flex flex-wrap gap-3">
             {project.tags.map((tag: string) => (
               <span
-                className="mr-3 rounded-full border border-black px-4 py-[5px] font-light"
+                className="rounded-full border border-black px-4 py-[5px] font-light"
                 key={tag}
               >
                 {tag}
               </span>
             ))}
           </div>
-          <div className="my-24 border border-black p-10">
+          <div className="my-24 border border-black p-4">
             {project.projectVideo ? (
               <div className="relative h-0 pb-[56.25%]">
                 <iframe
@@ -119,8 +119,8 @@ export default () => {
               />
             )}
           </div>
-          <div className="my-48">
-            <h2 className="m-auto w-2/3 text-center font-ilyas text-6xl uppercase">
+          <div className="my-24 md:my-48">
+            <h2 className="m-auto w-full text-center font-ilyas text-5xl uppercase md:w-3/4 md:text-7xl lg:w-2/3">
               {project.quote}
             </h2>
           </div>
