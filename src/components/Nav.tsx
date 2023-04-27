@@ -6,6 +6,7 @@ import { motion, useAnimation, useCycle } from 'framer-motion'
 import dropdownArrow from '../../public/images/nav/dropdown-arrow.svg'
 import { useState } from 'react'
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const router = useRouter()
 

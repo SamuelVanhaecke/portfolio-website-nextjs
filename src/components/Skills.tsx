@@ -13,6 +13,7 @@ interface Skills {
   }[]
 }
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const { data, error } = useSWR('/api/skillsdata', fetcher)
   const [skills, setSkills] = useState<Skills>()

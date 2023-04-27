@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import BackgroundGradientOrange from '@/components/BackgroundGradientOrange'
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const [btnLeft, setBtnLeft] = useState(true)
   const [formDirty, setFormDirty] = useState(true)
@@ -104,8 +105,8 @@ export default () => {
     <Layout>
       {/* <BackgroundGradientOrange /> */}
       <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
-        <h1 className="mb-12 md:mb-20 font-ilyas text-6xl uppercase md:text-7xl lg:text-8xl">
-          Let's work <br /> together
+        <h1 className="mb-12 font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
+          Let&apos;s work <br /> together
         </h1>
         <form
           className="m-auto mb-64 flex flex-col gap-12"

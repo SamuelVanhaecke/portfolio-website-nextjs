@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import orangeGradient from '../../public/images/orange_big.webp'
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const [position, setPosition] = useState({
     x: Math.random() * (window.innerWidth - 2000),

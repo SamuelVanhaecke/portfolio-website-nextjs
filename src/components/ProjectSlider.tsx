@@ -36,8 +36,8 @@ interface Project {
 
 type Projects = Project[]
 
-// @ts-ignore
-export default ({ isVisible }) => {
+// eslint-disable-next-line react/display-name
+export default ({ isVisible }: any) => {
   const { data, error } = useSWR('/api/projectsdata', fetcher)
   const [currentProject, setCurrentProject] = useState<Project>()
   const [highlightedProjects, setHighlightedProjects] = useState<Projects>()
@@ -145,7 +145,10 @@ export default ({ isVisible }) => {
                 </h2>
                 <ul className="flex max-w-sm flex-row flex-wrap gap-2 md:gap-4">
                   {currentProject.tags.map((tag: string) => (
-                    <li className="rounded-full border border-black px-3 py-1 text-xs text-black md:text-sm">
+                    <li
+                      key={tag}
+                      className="rounded-full border border-black px-3 py-1 text-xs text-black md:text-sm"
+                    >
                       {tag}
                     </li>
                   ))}

@@ -3,6 +3,7 @@ import divider from '../../public/images/footer/divider_dot.png'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// eslint-disable-next-line react/display-name
 export default () => {
   return (
     <div className="m-auto mt-36 mb-6 flex max-w-screen-2xl flex-col items-center justify-center gap-16 border-t border-black px-8 pt-16 md:px-24 lg:grid lg:h-96 lg:grid-cols-[130px_1fr_130px] lg:items-end lg:gap-24 lg:pt-6 2xl:px-0">
@@ -57,7 +58,7 @@ export default () => {
       <div className="flex h-4/6 flex-col justify-between">
         <div className="flex flex-col items-center gap-2 lg:items-end">
           <p className="text-center font-ilyas text-3xl uppercase lg:text-right">
-            Let's work <br></br> together
+            Let&apos;s work <br></br> together
           </p>
           <Link
             href="/contact"
