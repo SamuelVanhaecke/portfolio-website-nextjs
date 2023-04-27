@@ -39,7 +39,18 @@ export default () => {
           alt=""
         />
         <div className="absolute top-0 left-0 -z-20 -mt-10 flex h-screen w-screen flex-col items-center justify-end">
-          <Image src={line} alt="" className="mb-2" />
+          <svg
+            width="2"
+            height="70"
+            viewBox="0 0 2 70"
+            fill="none"
+            // xmlns="http://www.w3.org/2000/svg"
+            className="mb-2"
+          >
+            <path d="M1 0L1 70" stroke="#F8F8F9" stroke-linecap="round" />
+          </svg>
+
+          {/* <Image src={line} alt="" className="mb-2" /> */}
           <p className="font-light lowercase text-white">Read more</p>
         </div>
         <div className="absolute top-0 left-0 -z-30 flex h-screen w-screen flex-col items-center justify-end">
