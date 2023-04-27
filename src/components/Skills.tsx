@@ -40,7 +40,7 @@ export default () => {
   }
 
   return (
-    <div className="my-28 flex flex-wrap justify-center gap-16 md:my-64">
+    <div className="my-28 mx-10 flex flex-wrap justify-center gap-16 md:my-64">
       {skills?.categories.map(category => {
         return (
           <div key={category.name} className="flex w-96 flex-col items-center">
@@ -53,15 +53,17 @@ export default () => {
                     className="relative cursor-default rounded-full border border-black"
                   >
                     <div className="hover:bg-blur-0 bg-blur-sm h-full w-full rounded-full bg-white px-5 py-2 transition-all duration-300 hover:opacity-0">
-                      <h3 className="text-xl font-light">{skill.name}</h3>
+                      <h3 className="text-lg font-light md:text-xl">
+                        {skill.name}
+                      </h3>
                     </div>
                     <div className="absolute left-0 top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden break-all rounded-full ">
-                      <h3 className="animate-marquee text-clip whitespace-nowrap px-2 text-xl font-light">
+                      <h3 className="animate-marquee text-clip whitespace-nowrap px-2 text-lg font-light md:text-xl">
                         {calculateExperience(skill.startDate)}
                       </h3>
                     </div>
                     <div className="absolute left-0 top-0 -z-10 flex h-full w-full items-center justify-center overflow-hidden break-all rounded-full ">
-                      <h3 className="animate-marquee2 translate-x-full text-clip whitespace-nowrap px-2 text-xl font-light">
+                      <h3 className="animate-marquee2 translate-x-full text-clip whitespace-nowrap px-2 text-lg font-light md:text-xl">
                         {calculateExperience(skill.startDate)}
                       </h3>
                     </div>

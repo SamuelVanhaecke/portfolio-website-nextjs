@@ -49,7 +49,7 @@ export default () => {
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'circOut', delay: 0.2 }}
-        className="m-auto flex max-w-screen-2xl flex-col items-center gap-14 px-8 pb-40 md:px-24 lg:h-[700px] lg:flex-row lg:gap-6 lg:px-12 lg:pb-64 xl:h-[900px] xl:px-0"
+        className="m-auto flex max-w-screen-2xl flex-col items-center gap-8 px-8 pb-20 md:px-24 md:pb-40 lg:h-[700px] lg:flex-row lg:gap-6 lg:px-12 lg:pb-64 xl:h-[900px] xl:px-0"
       >
         <motion.h2
           initial={{ opacity: 0, x: 350 }}
