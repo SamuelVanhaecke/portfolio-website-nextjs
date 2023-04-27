@@ -12,13 +12,13 @@ export default () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative m-auto mt-10 mb-16 flex flex-col justify-between px-8 md:mb-24 md:flex-row md:px-16 xl:px-28">
-      <div className="flex flex-row items-center justify-between">
+    <nav className="relative m-auto mt-10 mb-10 flex flex-row justify-between px-8 md:mb-24 md:flex-row md:px-16 xl:px-28">
+      <div className="flex flex-row items-start justify-between md:items-center">
         <Link href="/">
           <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>
         </Link>
         {/* TODO: change and animate svg's */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <button
             className="flex h-8 w-8 flex-col justify-between"
             onClick={() => setIsOpen(!isOpen)}
@@ -48,35 +48,34 @@ export default () => {
               </svg>
             )}
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* <ul className="hidden items-center gap-16 md:flex md:gap-24"> */}
       <ul
-        className={`${
-          isOpen ? 'flex' : 'hidden'
-        } mt-8 w-full flex-col items-center justify-center gap-10 md:static md:mt-0 md:flex md:h-auto md:w-auto md:flex-row md:gap-24 md:bg-transparent`}
+        className={`mt-0; flex w-full flex-col items-end justify-center gap-1 md:static md:mt-0 md:flex md:h-auto md:w-auto md:flex-row md:items-center md:gap-24 md:bg-transparent`}
       >
-        <li className="transition-all hover:pb-1">
+        <li className="transition-all md:hover:pb-1">
           <Link
             href="/"
-            className={
+            className={`${'pr-2 text-3xl font-[100] md:pr-0 md:text-lg md:font-light'} ${
               router.pathname == '/'
-                ? 'border-b border-black font-light'
+                ? 'border-r border-black font-light md:border-r-0 md:border-b'
                 : 'font-light'
             }
+            `}
           >
             Home
           </Link>
         </li>
-        <li className="transition-all hover:pb-1">
+        <li className="transition-all md:hover:pb-1">
           <Link
             href="/portfolio"
-            className={
+            className={`${'pr-2 text-3xl font-[100] md:pr-0 md:text-lg md:font-light'} ${
               router.pathname == '/portfolio'
-                ? 'border-b border-black font-light'
+                ? 'border-r border-black font-light md:border-r-0 md:border-b'
                 : 'font-light'
-            }
+            }`}
           >
             Portfolio
           </Link>
@@ -113,9 +112,11 @@ export default () => {
         <li>
           <Link
             href="/contact"
-            className={
-              'rounded-full border border-solid border-black bg-opacity-0 px-5 py-2.5 font-light transition-all duration-150 ease-out hover:bg-black hover:bg-opacity-100 hover:text-white'
-            }
+            className={`${'border-black bg-opacity-0 py-0 pr-2 text-3xl font-[100] transition-all duration-150 ease-out hover:text-white md:rounded-full md:border md:border-solid md:py-2.5 md:px-5 md:text-lg md:font-light md:hover:bg-black md:hover:bg-opacity-100'}, ${
+              router.pathname == '/contact'
+                ? 'rounded-none border-r border-black font-light md:border-b'
+                : 'font-light'
+            }`}
           >
             Contact
           </Link>
