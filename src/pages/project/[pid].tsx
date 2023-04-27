@@ -37,6 +37,7 @@ interface Project {
 
 type Projects = Project[]
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const router = useRouter()
 

@@ -13,6 +13,7 @@ import orangeGradient from '../../public/images/orange_big.png'
 
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
+// eslint-disable-next-line react/display-name
 export default () => {
   const { data, error } = useSWR('/api/projectsdata', fetcher)
 

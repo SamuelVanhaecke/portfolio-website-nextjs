@@ -17,6 +17,7 @@ import me from '../../public/images/me_bw.png'
 import { motion } from 'framer-motion'
 import meInParis from '../../public/images/index/paris_edit.png'
 
+// eslint-disable-next-line react/display-name
 export default () => {
   return (
     <Layout>
@@ -81,14 +82,14 @@ export default () => {
             transition={{ duration: 0.4, ease: 'circOut', delay: 0.4 }}
             className="max-w-2xl text-xl font-light leading-[130%] tracking-[2%] xl:text-2xl "
           >
-            I'm a graphic designer and full-stack developer from Belgium. My
-            passion for art and creativity started at a young age, and I have
+            I&apos;m a graphic designer and full-stack developer from Belgium.
+            My passion for art and creativity started at a young age, and I have
             since pursued a career in graphic design and full-stack development,
             where I can bring my imagination to life through visually stunning
-            designs and dynamic applications. When I'm not working, I enjoy
+            designs and dynamic applications. When I&apos;m not working, I enjoy
             cinema, tinkering and staying active through sports and fitness
             activities. Welcome to my website and if you have any questions,
-            don't hesitate to contact me :)
+            don&apos;t hesitate to contact me :)
           </motion.p>
         </div>
       </motion.div>
