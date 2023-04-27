@@ -1,0 +1,99 @@
+{
+  "categories": [
+    {
+      "name": "Development",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "HTML / CSS",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "React / Next.js",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "MySQL",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "Drupal",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "Three.js",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "SASS / SCSS",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "Tailwind CSS",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": ".NET",
+          "startDate": "2019-01-01"
+        }
+      ]
+    },
+    {
+      "name": "Design",
+      "skills": [
+        {
+          "name": "Photoshop",
+          "startDate": "2019-10-01"
+        },
+        {
+          "name": "Illustrator",
+          "startDate": "2019-10-01"
+        },
+        {
+          "name": "Figma",
+          "startDate": "2020-06-01"
+        },
+        {
+          "name": "Cinema 4D",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "After Effects",
+          "startDate": "2020-10-01"
+        },
+        {
+          "name": "Adobe XD",
+          "startDate": "2019-10-01"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "name": "Git",
+          "startDate": "2019-10-01"
+        },
+        {
+          "name": "VSCode",
+          "startDate": "2019-10-01"
+        },
+        {
+          "name": "Trello",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "Notion",
+          "startDate": "2019-01-01"
+        },
+        {
+          "name": "Figma",
+          "startDate": "2019-01-01"
+        }
+      ]
+    }
+  ]
+}

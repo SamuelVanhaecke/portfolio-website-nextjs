@@ -1,0 +1,127 @@
+[
+  {
+    "id": "1",
+    "title": "Beerpong",
+    "description": "The Beer Pong Projection Table is a creative development project that combines traditional beer pong gameplay with cutting-edge technology. The table features a projected playfield that reacts to the ball's movement, creating an immersive and engaging experience for players. The AI system integrated into the table uses a camera to track the movement of the ball and determine if a player has scored a point, providing real-time feedback and scoring. The project utilizes both Unity and Open Frameworks to create a seamless and interactive experience for players. With its innovative design and advanced technology, the Beer Pong Projection Table is sure to be a hit at parties, events, and gatherings.",
+    "coverImage": "https://i.imgur.com/rLsBDlM.png",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "https://player.vimeo.com/video/817573778?h=40e940145f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Project 1",
+    "tags": ["Installation", "Open Frameworks", "Unity"],
+    "highlighted": true,
+    "quote": "Traditional beer pong meets modern technology for the ultimate party game upgrade",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/pNVy8PP.jpg",
+          "alt": "Project 1",
+          "width": 237,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/VSf0ry0.jpg",
+          "alt": "Project 1",
+          "width": 667,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/gxDOjfO.jpg",
+          "alt": "Project 1",
+          "width": 667,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/7Yh9K2c.png",
+          "alt": "Project 1",
+          "width": 889,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/mjyQTVX.jpg",
+          "alt": "Project 1",
+          "width": 667,
+          "height": 500
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "title": "Heartbeat of the Forest",
+    "description": "Heartbeat of the Forest was a collaborative project that I worked on with two other students during my final year of Devine. The project was commissioned by the research group “Future Through Design” at KASK School of Arts, with the aim of reconnecting people with nature in a world where such a connection is increasingly rare. We chose to use the Mariahove estate as our canvas, which provided us with access to one of the buildings and the vast surrounding grounds. Our vision was to create a hotel that would allow visitors to immerse themselves in nature by staying in one of our thematically designed rooms. Each room was carefully crafted to showcase the relationship between humans and nature, with a particular focus on the estate’s bat population, which was the subject of ongoing research by the KASK team. We aimed to encourage visitors to consider their impact on the ecosystem and to take steps towards sustainability. Our project successfully demonstrated the potential for design to foster a deeper connection between people and the natural world. Below, you can see an example of what one of our hotel rooms might have looked like.",
+    "coverImage": "https://i.imgur.com/7Yh9K2c.png",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "https://player.vimeo.com/video/821014212?h=db4feb5baa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Bat Room",
+    "tags": ["Socket IO", "RaspberryPi", "Team Project"],
+    "highlighted": true,
+    "quote": "Get in touch with nature and feel it's heartbeat",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/pNVy8PP.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/VSf0ry0.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/gxDOjfO.jpg",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/7Yh9K2c.png",
+          "alt": "Project 2"
+        },
+        {
+          "src": "https://i.imgur.com/mjyQTVX.jpg",
+          "alt": "Project 2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "title": "Devine Takeover",
+    "description": "Devine Takeover is quite literally what you would expect it to be. We had the opportunity to take over the design website and create our own version of it. We were given a lot of freedom and only had a few requirements to meet. I worked with Cinema 4D to create modern renders of old technology. For the rest of the website I chose for a minimalistic design with some bold accents.",
+    "coverImage": "https://i.imgur.com/sHoJYxf.jpg",
+    "coverImageDimensions": {
+      "width": 619,
+      "height": 400
+    },
+    "projectVideo": "https://player.vimeo.com/video/821024182?h=661b71ebec&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    "alt": "Floppy disks floating towards old Macintosh",
+    "tags": ["Cinema 4D", "Webdesign"],
+    "highlighted": true,
+    "quote": "3 dimensional design can bring something entirely new to the table",
+    "caroussel": {
+      "images": [
+        {
+          "src": "https://i.imgur.com/131hCbg.jpg",
+          "alt": "3D render of an old Macintosh",
+          "width": 500,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/UTpnrdL.jpg",
+          "alt": "3D render of a floppy disk on a metal socket",
+          "width": 500,
+          "height": 500
+        },
+        {
+          "src": "https://i.imgur.com/fdN7bXC.jpg",
+          "alt": "3D render of a floppy disk with the Devine logo",
+          "width": 500,
+          "height": 500
+        }
+      ]
+    }
+  }
+]
