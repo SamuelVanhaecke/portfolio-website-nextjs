@@ -111,7 +111,7 @@ export default ({ isVisible }: any) => {
       </div>
       <div
         onClick={() => handlePrevious()}
-        className="hidden h-fit transition-all hover:-translate-x-3 hover:cursor-pointer lg:block"
+        className="hidden h-fit justify-between transition-all hover:-translate-x-3 hover:cursor-pointer lg:block"
       >
         <svg
           width="198"
@@ -132,13 +132,13 @@ export default ({ isVisible }: any) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center justify-between">
                 <Image
                   src={currentProject.coverImage}
                   alt={''}
                   width={currentProject.coverImageDimensions.width}
                   height={currentProject.coverImageDimensions.height}
-                  className="h-auto w-full border border-black p-5 md:h-[40vh] lg:w-auto"
+                  className="h-auto w-full border border-black p-5 lg:w-auto xl:h-[40vh]"
                 />
                 <h2 className="mt-8 mb-6 font-ilyas text-5xl uppercase md:mt-12">
                   {currentProject.title}
@@ -177,6 +177,7 @@ export default ({ isVisible }: any) => {
           viewBox="0 0 198 118"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-36 lg:w-full"
         >
           <path d="M0 59H197" stroke="#27272B" />
           <path d="M139 1L197 59L139 117" stroke="#27272B" />

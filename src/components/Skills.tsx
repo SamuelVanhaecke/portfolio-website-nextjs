@@ -41,7 +41,7 @@ export default () => {
   }
 
   return (
-    <div className="my-28 mx-10 flex flex-wrap justify-center gap-16 md:my-64">
+    <div className="my-28 flex flex-wrap justify-center gap-16 md:my-64">
       {skills?.categories.map(category => {
         return (
           <div key={category.name} className="flex w-96 flex-col items-center">

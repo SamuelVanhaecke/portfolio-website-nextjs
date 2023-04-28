@@ -22,10 +22,11 @@ export default () => {
   return (
     <Layout>
       <div className="h-screen">
-        <div className="absolute top-40 -z-10 flex h-screen w-screen flex-col items-center md:top-0 md:justify-center">
+        <div className="absolute top-40 left-0 -z-10 flex h-screen w-screen flex-col items-center md:top-0 md:justify-center">
           {/* <h1 className="text-center font-ilyas text-9xl uppercase"> */}
-          <h1 className="mb-12 text-center font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
-            Webdesign <br></br>Creative Development<br></br>Graphic Design
+          <h1 className="mb-12 mt-5 overflow-visible text-center font-ilyas text-5xl uppercase md:mt-0 md:mb-20 md:text-7xl lg:text-8xl">
+            Webdesign <br></br>Creative Development
+            <br></br>Graphic Design
           </h1>
         </div>
         <Image
@@ -61,12 +62,14 @@ export default () => {
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'circOut', delay: 0.2 }}
-        className="m-auto flex max-w-screen-2xl flex-col items-center gap-8 px-8 pb-20 md:px-24 md:pb-40 lg:h-[700px] lg:flex-row lg:gap-6 lg:px-12 lg:pb-64 xl:h-[900px] xl:px-0"
+        viewport={{ once: true }}
+        className="flex flex-col items-center gap-8 pb-20 md:pb-40 lg:h-[700px] lg:flex-row lg:gap-6 lg:pb-64 xl:h-[900px]"
       >
         <motion.h2
-          initial={{ opacity: 0, x: 350 }}
+          initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: 'circOut', delay: 0.3 }}
+          viewport={{ once: true }}
           className="xs:text-6xl font-ilyas text-5xl uppercase sm:text-7xl lg:hidden"
         >
           My name is Samuel
@@ -83,6 +86,7 @@ export default () => {
             initial={{ opacity: 0, x: 350 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, ease: 'circOut', delay: 0.3 }}
+            viewport={{ once: true }}
             className="hidden font-ilyas text-7xl uppercase lg:block xl:text-9xl"
           >
             My name is Samuel
@@ -91,6 +95,7 @@ export default () => {
             initial={{ opacity: 0, x: 350 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, ease: 'circOut', delay: 0.4 }}
+            viewport={{ once: true }}
             className="max-w-2xl text-xl font-light leading-[130%] tracking-[2%] xl:text-2xl "
           >
             I&apos;m a graphic designer and full-stack developer from Belgium.
@@ -109,7 +114,7 @@ export default () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'circOut', delay: 0.1 }}
         viewport={{ once: true }}
-        className="m-auto max-w-screen-2xl px-8 md:px-24 lg:px-12 xl:px-0"
+        className=""
       >
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
