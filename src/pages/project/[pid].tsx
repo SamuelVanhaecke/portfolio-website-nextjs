@@ -79,7 +79,7 @@ export default () => {
   return (
     <Layout>
       {project ? (
-        <div className="m-auto max-w-screen-2xl px-8 md:px-16 xl:px-28 2xl:px-0">
+        <div className="m-auto w-full">
           <h1 className="mb-9 font-ilyas text-8xl uppercase">
             {project.title}
           </h1>

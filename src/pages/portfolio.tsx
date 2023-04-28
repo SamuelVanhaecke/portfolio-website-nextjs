@@ -29,7 +29,7 @@ export default () => {
       <BackgroundGradient />
       {/* <BackgroundGradientOrange /> */}
       <Layout>
-        <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
+        <div className="w-full">
           {/* <Image
             className="absolute -left-64 top-[50%] -z-50"
             src={orangeGradient}
@@ -37,10 +37,9 @@ export default () => {
           /> */}
           {/* <Image className="absolute left-56 -z-40" src={blueGradient} alt="" /> */}
           <h1 className="mb-12 font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
-            Take a look <br />
-            at my work
+            Take a look at <br /> my work
           </h1>
-          <div className="flex flex-col gap-24 md:gap-48 lg:gap-64">
+          <div className="flex flex-col gap-12 sm:gap-24 md:gap-48 lg:gap-64">
             {/* @ts-ignore */}
             {projects.map(item => (
               <Link
@@ -57,7 +56,7 @@ export default () => {
                   width={item.coverImageDimensions.width}
                   height={item.coverImageDimensions.height}
                 />
-                <ul className="absolute bottom-5 right-5 flex flex-row-reverse flex-wrap-reverse gap-3  md:flex-nowrap">
+                <ul className="absolute bottom-5 right-5 left-5 flex flex-row-reverse flex-wrap-reverse gap-3  md:flex-nowrap">
                   {/* @ts-ignore */}
                   {item.tags.map(tag => (
                     <li

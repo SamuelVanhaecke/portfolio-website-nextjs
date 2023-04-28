@@ -114,7 +114,7 @@ export default () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'circOut', delay: 0.1 }}
         viewport={{ once: true }}
-        className=""
+        className="w-full"
       >
         <h2 className="font-ilyas text-6xl uppercase">Highlighted projects</h2>
         <ProjectSlider isVisible={true} />
