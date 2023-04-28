@@ -29,7 +29,7 @@ export default () => {
             <br></br>Graphic Design
           </h1>
         </div>
-        <Image
+        {/* <Image
           className="absolute -top-80 -left-64 -z-50"
           src={orangeGradient}
           alt=""
@@ -38,7 +38,7 @@ export default () => {
           className="absolute -top-32 left-56 -z-40"
           src={blueGradient}
           alt=""
-        />
+        /> */}
         <div className="absolute top-0 left-0 -z-20 -mt-10 flex h-screen w-screen flex-col items-center justify-end">
           <svg
             width="2"
@@ -48,7 +48,7 @@ export default () => {
             // xmlns="http://www.w3.org/2000/svg"
             className="mb-2"
           >
-            <path d="M1 0L1 70" stroke="#F8F8F9" stroke-linecap="round" />
+            <path d="M1 0L1 70" stroke="#F8F8F9" />
           </svg>
 
           {/* <Image src={line} alt="" className="mb-2" /> */}

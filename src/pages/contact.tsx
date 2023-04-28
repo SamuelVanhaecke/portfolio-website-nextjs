@@ -2,8 +2,6 @@ import Layout from '@/components/Layout'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import BackgroundGradientOrange from '@/components/BackgroundGradientOrange'
-
 // eslint-disable-next-line react/display-name
 export default () => {
   const [btnLeft, setBtnLeft] = useState(true)
@@ -41,13 +39,19 @@ export default () => {
         setPhone('')
         setMessage('')
 
-        setFormSent(true)
-
         // send form data to backend
 
         // show success message
+        setFormSent(true)
 
         // reset form errors
+        setFormErrors({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: '',
+        })
       }
     }
   }
