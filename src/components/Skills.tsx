@@ -22,7 +22,6 @@ export default () => {
     if (data) {
       const allSkills: Skills = JSON.parse(data)
       setSkills(allSkills)
-      console.log(allSkills)
     }
   }, [data])
 

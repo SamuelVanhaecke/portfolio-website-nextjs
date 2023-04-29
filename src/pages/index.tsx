@@ -6,14 +6,10 @@ import useSWR from 'swr'
 import Nav from '../components/Nav'
 import ProjectSlider from '../components/ProjectSlider'
 import Skills from '../components/Skills'
-import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 
 // Images
-import blueGradient from '../../public/images/blue_big.webp'
-import orangeGradient from '../../public/images/orange_big.webp'
-import line from '../../public/images/readmore_line.png'
-import me from '../../public/images/me_bw.png'
+import me from '../../public/images/index/me_bw.png'
 import { motion } from 'framer-motion'
 import meInParis from '../../public/images/index/paris_edit.png'
 
@@ -55,7 +51,7 @@ export default () => {
           <p className="font-light lowercase text-white">Read more</p>
         </div>
         <div className="absolute top-0 left-0 -z-30 flex h-screen w-screen flex-col items-center justify-end">
-          <Image className="" src={me} alt="" />
+          <Image className="" priority src={me} alt="Picture of me (Samuel)" />
         </div>
       </div>
       <motion.div
@@ -80,6 +76,7 @@ export default () => {
           width={500}
           alt="Picture of me in front of the Arc the Triomphe"
           className="h-full w-auto border border-black p-5"
+          quality={100}
         />
         <div className="flex h-full flex-col justify-between py-5">
           <motion.h2

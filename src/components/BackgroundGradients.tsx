@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 // Images
-import orangeGradient from '../../public/images/orange_big.png'
-import blueGradient from '../../public/images/blue_big.png'
+import orangeGradient from '../../public/images/orange_big.webp'
+import blueGradient from '../../public/images/blue_big.webp'
 
 // eslint-disable-next-line react/display-name
 export default () => {
@@ -76,27 +76,38 @@ export default () => {
     // }
   }, [])
 
-  return positions1.x != 0 && positions1.y != 0
-    ? (console.log(typeof positions1.x),
-      (
-        <div className="fixed top-0 left-0 -z-40 h-screen w-screen">
-          <div
-            className={`absolute h-[800px] w-[800px] sm:h-[1400px] sm:w-[1400px] lg:h-[2000px] lg:w-[2000px]`}
-            style={{
-              transform: `translate(${positions1.x}px, ${positions1.y}px)`,
-            }}
-          >
-            <Image src={blueGradient} className="absolute" alt="" />
-          </div>
-          <div
-            className={`absolute h-[700px] w-[700px] sm:h-[1400px] sm:w-[1400px] lg:h-[2000px] lg:w-[2000px]`}
-            style={{
-              transform: `translate(${positions2.x}px, ${positions2.y}px)`,
-            }}
-          >
-            <Image src={orangeGradient} className="absolute" alt="" />
-          </div>
-        </div>
-      ))
-    : null
+  return positions1.x != 0 && positions1.y != 0 ? (
+    <div className="fixed top-0 left-0 -z-40 h-screen w-screen">
+      <div
+        className={`absolute h-[700px] w-[700px] sm:h-[1400px] sm:w-[1400px] lg:h-[2000px] lg:w-[2000px]`}
+        style={{
+          transform: `translate(${positions1.x}px, ${positions1.y}px)`,
+        }}
+      >
+        <Image
+          placeholder="blur"
+          src={blueGradient}
+          className="absolute"
+          alt="Pixelated round blue gradient"
+          quality={100}
+          priority
+        />
+      </div>
+      <div
+        className={`absolute h-[700px] w-[700px] sm:h-[1400px] sm:w-[1400px] lg:h-[2000px] lg:w-[2000px]`}
+        style={{
+          transform: `translate(${positions2.x}px, ${positions2.y}px)`,
+        }}
+      >
+        <Image
+          placeholder="blur"
+          src={orangeGradient}
+          className="absolute"
+          alt="Pixelated round orange gradient"
+          quality={100}
+          priority
+        />
+      </div>
+    </div>
+  ) : null
 }

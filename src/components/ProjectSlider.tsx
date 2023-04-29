@@ -51,7 +51,6 @@ export default ({ isVisible }: any) => {
       // set hightlighted projects with type Project
       setHighlightedProjects(highlightedProjects)
       setCurrentProject(highlightedProjects[0])
-      console.log(highlightedProjects[0].title)
     }
   }, [data])
 
@@ -153,14 +152,14 @@ export default ({ isVisible }: any) => {
                     </li>
                   ))}
                 </ul>
-                <p className="my-10 max-w-xl font-normal">
+                <p className="my-10 max-w-xl font-normal line-clamp-5">
                   {currentProject.description}
                 </p>
                 <Link
                   href={`/project/${currentProject.title}`}
-                  className="rounded-full border border-black px-7 py-3 text-xl font-light hover:bg-black hover:text-white"
+                  className="rounded-full border border-black px-7 py-3 text-lg font-light hover:bg-black hover:text-white"
                 >
-                  Read more
+                  Discover Project
                 </Link>
               </div>
             </motion.div>
