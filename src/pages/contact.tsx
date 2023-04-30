@@ -1,7 +1,6 @@
 import Layout from '@/components/Layout'
 import { useState } from 'react'
-
-import BackgroundGradientOrange from '@/components/BackgroundGradientOrange'
+import { motion } from 'framer-motion'
 
 // eslint-disable-next-line react/display-name
 export default () => {
@@ -24,32 +23,36 @@ export default () => {
     message: '',
   })
 
-  const handleButtonHover = () => {
-    setBtnLeft(!btnLeft)
-  }
-
   // create a function that handles the form submission with a prevent default
   const handleForm = (e: any) => {
     e.preventDefault()
 
-    if (formValidation()) {
-      console.log('Errors in form')
-    } else {
-      console.log('form submitted')
-      // set all form fields to empty string
-      setFirstName('')
-      setLastName('')
-      setEmail('')
-      setPhone('')
-      setMessage('')
+    if (!formSent) {
+      if (formValidation()) {
+        console.log('Errors in form')
+      } else {
+        console.log('form submitted')
+        // set all form fields to empty string
+        setFirstName('')
+        setLastName('')
+        setEmail('')
+        setPhone('')
+        setMessage('')
 
-      setFormSent(true)
+        // send form data to backend
 
-      // send form data to backend
+        // show success message
+        setFormSent(true)
 
-      // show success message
-
-      // reset form errors
+        // reset form errors
+        setFormErrors({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: '',
+        })
+      }
     }
   }
 
@@ -104,12 +107,12 @@ export default () => {
   return (
     <Layout>
       {/* <BackgroundGradientOrange /> */}
-      <div className="m-auto max-w-screen-lg px-8 md:px-24 lg:px-0">
+      <div className="w-full max-w-screen-lg">
         <h1 className="mb-12 font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
           Let&apos;s work <br /> together
         </h1>
         <form
-          className="m-auto mb-64 flex flex-col gap-12"
+          className="m-auto mb-20 flex flex-col gap-12 md:mb-64"
           onSubmit={handleForm}
         >
           <div className="flex w-full flex-col gap-12 md:flex-row md:gap-6">
@@ -121,7 +124,7 @@ export default () => {
                 {formErrors.firstName}
               </label>
               <input
-                className="border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
+                className="rounded-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
                 placeholder="First Name *"
                 type="text"
                 id="first-name"
@@ -139,7 +142,7 @@ export default () => {
                 {formErrors.lastName}
               </label>
               <input
-                className="border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
+                className="rounded-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
                 placeholder="Last Name *"
                 type="text"
                 id="last-name"
@@ -160,7 +163,7 @@ export default () => {
               </label>
               <input
                 typeof="email"
-                className="border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
+                className="rounded-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
                 placeholder="Email *"
                 type="text"
                 id="email"
@@ -178,7 +181,7 @@ export default () => {
                 {formErrors.phone}
               </label>
               <input
-                className="border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black focus:border-transparent focus:ring-0 active:divide-emerald-900"
+                className="rounded-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black focus:border-transparent focus:ring-0 active:divide-emerald-900"
                 placeholder="Telephone"
                 type="text"
                 id="telephone"
@@ -197,7 +200,7 @@ export default () => {
               {formErrors.message}
             </label>
             <textarea
-              className="resize-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
+              className="resize-none rounded-none border-b border-b-black bg-transparent bg-white bg-opacity-0 p-2 text-xl font-light leading-none placeholder:text-black"
               placeholder="Message *"
               rows={6}
               id="message"
@@ -208,33 +211,37 @@ export default () => {
             ></textarea>
           </div>
           {/* TODO: Add a checkbox for GDPR  */}
-          {/* TODO: fix button animation bug */}
           <div className="relative w-full">
             <button
-              className={`absolute box-content w-28 rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all ${
-                btnLeft
-                  ? 'left-0 -translate-x-0'
-                  : 'left-full -translate-x-full'
-              } ${formDirty ? '' : 'hover:bg-black hover:text-white'}`}
-              // onMouseEnter={() => handleButtonHover()}
+              className={`absolute left-0 box-content w-28 -translate-x-0 rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all hover:bg-black hover:text-white ${
+                formSent
+                  ? 'border-[#4ADC8D] bg-[#4ADC8D] text-white hover:bg-[#4ADC8D]'
+                  : 'bg-transparent'
+              } `}
               type="submit"
             >
               {formSent ? (
-                // checkmark svg
-                <svg
+                <motion.svg
                   className="m-auto h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{
+                      type: 'tween',
+                      duration: 0.4,
+                      ease: 'easeIn',
+                    }}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M5 13l4 4L19 7"
                   />
-                </svg>
+                </motion.svg>
               ) : (
                 'Send Message'
               )}

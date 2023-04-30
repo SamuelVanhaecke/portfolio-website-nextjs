@@ -3,9 +3,12 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
+
+import ReactPlayer from 'react-player'
+
+// Splide slider
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 
 import Layout from '@/components/Layout'
 
@@ -46,25 +49,19 @@ export default () => {
   const { data, error } = useSWR('/api/projectsdata', fetcher)
 
   // Image slider
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [sliderLoaded, setSliderLoaded] = useState(false)
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      loop: true,
-      slides: { perView: 'auto', spacing: 24 },
-      mode: 'free',
-      initial: 0,
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel)
-      },
-      created() {
-        setSliderLoaded(true)
-      },
-    },
-    [
-      // add plugins here
-    ],
-  )
+  const [currentSlide, setCurrentSlide] = useState<any>(0)
+
+  const splideRef = useRef<Splide>(null)
+
+  const handleNext = () => {
+    splideRef.current?.go('+') // Go to the previous slide
+    setCurrentSlide(splideRef.current?.splide?.index)
+  }
+
+  const handlePrev = () => {
+    splideRef.current?.go('-') // Go to the previous slide
+    setCurrentSlide(splideRef.current?.splide?.index)
+  }
 
   //Handle the error state
   if (error) return <div>Failed to load</div>
@@ -79,7 +76,7 @@ export default () => {
   return (
     <Layout>
       {project ? (
-        <div className="m-auto max-w-screen-2xl px-8 md:px-16 xl:px-28 2xl:px-0">
+        <div className="m-auto w-full">
           <h1 className="mb-9 font-ilyas text-8xl uppercase">
             {project.title}
           </h1>
@@ -97,18 +94,15 @@ export default () => {
           <div className="my-24 border border-black p-4">
             {project.projectVideo ? (
               <div className="relative h-0 pb-[56.25%]">
-                <iframe
-                  src={project.projectVideo}
-                  // className="h-full w-full"
-                  style={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                  }}
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  title="3DEV_PPP_vanhaeckeSamuel_mov-to-show-off"
-                ></iframe>
+                <ReactPlayer
+                  className={'absolute'}
+                  controls
+                  playing
+                  url={project.projectVideo}
+                  height={'100%'}
+                  width={'100%'}
+                  light
+                />
               </div>
             ) : (
               <Image
@@ -125,78 +119,79 @@ export default () => {
               {project.quote}
             </h2>
           </div>
-          <div>
-            {sliderLoaded && instanceRef.current && (
-              <div className="mb-6 flex items-center justify-end gap-3">
-                <svg
-                  width="20"
-                  height="42"
-                  viewBox="0 0 14 42"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.prev()
-                  }
-                  className="transition-transform hover:cursor-pointer sm:hover:-translate-x-1"
-                >
-                  <path d="M13 41L1 21L13 1" stroke="#27272B" />
-                </svg>
-                <p className="w-3 text-center text-xl font-light">
-                  {currentSlide + 1}
-                </p>
-                <svg
-                  width="11"
-                  height="27"
-                  viewBox="0 0 11 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M10 1L1 26" stroke="#27272B" />
-                </svg>
-                <p className="w-3 text-center text-xl font-light">
-                  {instanceRef.current.track.details.slides.length}
-                </p>
-                <svg
-                  width="14"
-                  height="42"
-                  viewBox="0 0 14 42"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.next()
-                  }
-                  className="transition-transform hover:cursor-pointer sm:hover:translate-x-1"
-                >
-                  <path d="M1 1L13 21L1 41" stroke="#27272B" />
-                </svg>
-              </div>
-            )}
-            {/* TODO: make responsive */}
-            <div ref={sliderRef} className="keen-slider max-h-[500px]">
-              {project.caroussel.images.map((image: any) => (
-                <div
-                  className={`keen-slider__slide`}
-                  style={{
-                    minWidth: image.width,
-                    maxWidth: image.width,
-                    // '@media (min-width: 768px)': {
-                    //   minWidth: image.width,
-                    //   maxWidth: image.width,
-                    // },
-                  }}
-                  key={image.src}
-                >
-                  <Image
-                    className="h-full w-auto"
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                  />
+          {project.caroussel.images.length > 0 && (
+            <div>
+              <Splide
+                ref={splideRef}
+                hasTrack={false}
+                options={{
+                  type: 'loop',
+                  autoWidth: true,
+                  gap: 12,
+                  pagination: false,
+                  arrows: false,
+                }}
+                className="max-h-[300px] lg:max-h-[500px]"
+                aria-label="My Favorite Images"
+              >
+                <div className="mb-6 flex items-center justify-end gap-3">
+                  <svg
+                    width="20"
+                    height="42"
+                    viewBox="0 0 14 42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => handlePrev()}
+                    className="transition-transform hover:cursor-pointer sm:hover:-translate-x-1"
+                  >
+                    <path d="M13 41L1 21L13 1" stroke="#27272B" />
+                  </svg>
+                  <p className="w-3 select-none text-center text-xl font-light">
+                    {currentSlide + 1}
+                  </p>
+                  <svg
+                    width="11"
+                    height="27"
+                    viewBox="0 0 11 27"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M10 1L1 26" stroke="#27272B" />
+                  </svg>
+                  <p className="w-3 select-none text-center text-xl font-light">
+                    {project.caroussel.images.length}
+                  </p>
+                  <svg
+                    width="14"
+                    height="42"
+                    viewBox="0 0 14 42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => handleNext()}
+                    className="transition-transform hover:cursor-pointer sm:hover:translate-x-1"
+                  >
+                    <path d="M1 1L13 21L1 41" stroke="#27272B" />
+                  </svg>
                 </div>
-              ))}
+                <SplideTrack className="h-[300px] lg:h-[500px]">
+                  {project.caroussel.images.map((image: any) => (
+                    <SplideSlide
+                      key={image.src}
+                      className="h-[300px] lg:h-[500px]"
+                    >
+                      <Image
+                        className="h-full w-full object-contain"
+                        src={image.src}
+                        alt={image.alt}
+                        width={image.width}
+                        height={image.height}
+                      />
+                    </SplideSlide>
+                  ))}
+                </SplideTrack>
+              </Splide>
             </div>
-          </div>
+          )}
         </div>
       ) : (
         <div>Project not found</div>

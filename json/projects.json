@@ -63,28 +63,7 @@
     "highlighted": true,
     "quote": "Get in touch with nature and feel it's heartbeat",
     "caroussel": {
-      "images": [
-        {
-          "src": "https://i.imgur.com/pNVy8PP.jpg",
-          "alt": "Project 2"
-        },
-        {
-          "src": "https://i.imgur.com/VSf0ry0.jpg",
-          "alt": "Project 2"
-        },
-        {
-          "src": "https://i.imgur.com/gxDOjfO.jpg",
-          "alt": "Project 2"
-        },
-        {
-          "src": "https://i.imgur.com/7Yh9K2c.png",
-          "alt": "Project 2"
-        },
-        {
-          "src": "https://i.imgur.com/mjyQTVX.jpg",
-          "alt": "Project 2"
-        }
-      ]
+      "images": []
     }
   },
   {
