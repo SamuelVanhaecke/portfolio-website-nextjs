@@ -32,7 +32,7 @@ export default () => {
 
     // if years is not a round number return the number of years rounded down
     if (years < 1) {
-      return '1-'
+      return '< 1 year'
     } else if (years % 1 !== 0) {
       return Math.floor(years) + '+ years'
     }
