@@ -213,7 +213,7 @@ export default () => {
           {/* TODO: Add a checkbox for GDPR  */}
           <div className="relative w-full">
             <button
-              className={`absolute left-0 box-content w-28 -translate-x-0 rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all transition-all hover:bg-black hover:text-white ${
+              className={`absolute left-0 box-content w-28 -translate-x-0 rounded-full border border-solid border-black px-5 py-2.5 text-center font-light transition-all hover:bg-black hover:text-white ${
                 formSent
                   ? 'border-[#4ADC8D] bg-[#4ADC8D] text-white hover:bg-[#4ADC8D]'
                   : 'bg-transparent'

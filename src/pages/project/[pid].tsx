@@ -4,10 +4,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
-// Keen slider
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
-
 // Splide slider
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
@@ -52,24 +48,6 @@ export default () => {
 
   // Image slider
   const [currentSlide, setCurrentSlide] = useState<any>(0)
-  const [sliderLoaded, setSliderLoaded] = useState(false)
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      loop: true,
-      slides: { perView: 'auto', spacing: 24 },
-      mode: 'free',
-      initial: 0,
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel)
-      },
-      created() {
-        setSliderLoaded(true)
-      },
-    },
-    [
-      // add plugins here
-    ],
-  )
 
   const splideRef = useRef<Splide>(null)
 

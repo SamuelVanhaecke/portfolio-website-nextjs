@@ -8,8 +8,6 @@ import macFrame from '../../public/images/mac_frame.png'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-// TODO: fix computer slider (or other type of animation to switch projects)
-
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 interface Project {
@@ -124,12 +122,17 @@ export default ({ isVisible }: any) => {
         </svg>
       </div>
       {currentProject && (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {isVisible && (
             <motion.div
               key={currentProject.title}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                type: 'spring',
+                staggerChildren: 0.5,
+              }}
             >
               <div className="flex flex-col items-center justify-between">
                 <Image
