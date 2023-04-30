@@ -3,9 +3,14 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+
+// Keen slider
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
+
+// Splide slider
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 
 import Layout from '@/components/Layout'
 
@@ -46,7 +51,7 @@ export default () => {
   const { data, error } = useSWR('/api/projectsdata', fetcher)
 
   // Image slider
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState<any>(0)
   const [sliderLoaded, setSliderLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -65,6 +70,18 @@ export default () => {
       // add plugins here
     ],
   )
+
+  const splideRef = useRef<Splide>(null)
+
+  const handleNext = () => {
+    splideRef.current?.go('+') // Go to the previous slide
+    setCurrentSlide(splideRef.current?.splide?.index)
+  }
+
+  const handlePrev = () => {
+    splideRef.current?.go('-') // Go to the previous slide
+    setCurrentSlide(splideRef.current?.splide?.index)
+  }
 
   //Handle the error state
   if (error) return <div>Failed to load</div>
@@ -126,7 +143,19 @@ export default () => {
             </h2>
           </div>
           <div>
-            {sliderLoaded && instanceRef.current && (
+            <Splide
+              ref={splideRef}
+              hasTrack={false}
+              options={{
+                type: 'loop',
+                autoWidth: true,
+                gap: 12,
+                pagination: false,
+                arrows: false,
+              }}
+              className="max-h-[300px] lg:max-h-[500px]"
+              aria-label="My Favorite Images"
+            >
               <div className="mb-6 flex items-center justify-end gap-3">
                 <svg
                   width="20"
@@ -134,14 +163,12 @@ export default () => {
                   viewBox="0 0 14 42"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.prev()
-                  }
+                  onClick={() => handlePrev()}
                   className="transition-transform hover:cursor-pointer sm:hover:-translate-x-1"
                 >
                   <path d="M13 41L1 21L13 1" stroke="#27272B" />
                 </svg>
-                <p className="w-3 text-center text-xl font-light">
+                <p className="w-3 select-none text-center text-xl font-light">
                   {currentSlide + 1}
                 </p>
                 <svg
@@ -153,8 +180,8 @@ export default () => {
                 >
                   <path d="M10 1L1 26" stroke="#27272B" />
                 </svg>
-                <p className="w-3 text-center text-xl font-light">
-                  {instanceRef.current.track.details.slides.length}
+                <p className="w-3 select-none text-center text-xl font-light">
+                  {project.caroussel.images.length}
                 </p>
                 <svg
                   width="14"
@@ -162,40 +189,29 @@ export default () => {
                   viewBox="0 0 14 42"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.next()
-                  }
+                  onClick={() => handleNext()}
                   className="transition-transform hover:cursor-pointer sm:hover:translate-x-1"
                 >
                   <path d="M1 1L13 21L1 41" stroke="#27272B" />
                 </svg>
               </div>
-            )}
-            {/* TODO: make responsive */}
-            <div ref={sliderRef} className="keen-slider max-h-[500px]">
-              {project.caroussel.images.map((image: any) => (
-                <div
-                  className={`keen-slider__slide`}
-                  style={{
-                    minWidth: image.width,
-                    maxWidth: image.width,
-                    // '@media (min-width: 768px)': {
-                    //   minWidth: image.width,
-                    //   maxWidth: image.width,
-                    // },
-                  }}
-                  key={image.src}
-                >
-                  <Image
-                    className="h-full w-auto"
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                  />
-                </div>
-              ))}
-            </div>
+              <SplideTrack className="h-[300px] lg:h-[500px]">
+                {project.caroussel.images.map((image: any) => (
+                  <SplideSlide
+                    key={image.src}
+                    className="h-[300px] lg:h-[500px]"
+                  >
+                    <Image
+                      className="h-full w-full object-contain"
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                    />
+                  </SplideSlide>
+                ))}
+              </SplideTrack>
+            </Splide>
           </div>
         </div>
       ) : (
