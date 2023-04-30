@@ -171,7 +171,7 @@ export default ({ isVisible }: any) => {
       )}
       <div
         onClick={() => handleNext()}
-        className="hidden h-fit transition-all hover:-translate-x-3 hover:cursor-pointer lg:block"
+        className="hidden h-fit transition-all hover:translate-x-3 hover:cursor-pointer lg:block"
       >
         <svg
           width="198"
