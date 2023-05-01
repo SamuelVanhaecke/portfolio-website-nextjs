@@ -1,7 +1,7 @@
 //useSWR allows the use of SWR inside function components
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 import ReactPlayer from 'react-player'
@@ -25,6 +25,7 @@ export default () => {
 
   const { pid } = router.query
 
+  // Fetch data from api
   const { data, error } = useSWR('/api/projectsdata', fetcher)
 
   // Image slider
@@ -32,13 +33,15 @@ export default () => {
 
   const splideRef = useRef<Splide>(null)
 
+  // Go to previous image in carrousel
   const handleNext = () => {
-    splideRef.current?.go('+') // Go to the previous slide
+    splideRef.current?.go('+')
     setCurrentSlide(splideRef.current?.splide?.index)
   }
 
+  // Go to next image in carrousel
   const handlePrev = () => {
-    splideRef.current?.go('-') // Go to the previous slide
+    splideRef.current?.go('-')
     setCurrentSlide(splideRef.current?.splide?.index)
   }
 
@@ -49,7 +52,7 @@ export default () => {
 
   const projects: Projects = JSON.parse(data)
 
-  // project is of the type Project
+  // Find correct project by id
   const project = projects.find(project => project.title === pid)
 
   return (
