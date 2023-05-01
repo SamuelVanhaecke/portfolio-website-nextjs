@@ -8,29 +8,10 @@ import macFrame from '../../public/images/mac_frame.png'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
+// Interfaces
+import { Project } from '@/models/Project'
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  coverImage: string
-  coverImageDimensions: {
-    width: number
-    height: number
-  }
-  projectVideo: string
-  alt: string
-  tags: string[]
-  highlighted: boolean
-  quote: string
-  caroussel: {
-    images: {
-      src: string
-      alt: string
-    }[]
-  }
-}
+const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 type Projects = Project[]
 

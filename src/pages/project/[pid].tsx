@@ -6,6 +6,9 @@ import Image from 'next/image'
 
 import ReactPlayer from 'react-player'
 
+// Interfaces
+import { Project } from '@/models/Project'
+
 // Splide slider
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
@@ -13,30 +16,6 @@ import '@splidejs/react-splide/css'
 import Layout from '@/components/Layout'
 
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
-
-interface Project {
-  id: string
-  title: string
-  description: string
-  coverImage: string
-  coverImageDimensions: {
-    width: number
-    height: number
-  }
-  projectVideo: string
-  alt: string
-  tags: string[]
-  highlighted: boolean
-  quote: string
-  caroussel: {
-    images: {
-      src: string
-      alt: string
-      width: number
-      height: number
-    }[]
-  }
-}
 
 type Projects = Project[]
 
