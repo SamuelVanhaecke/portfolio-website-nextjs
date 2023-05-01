@@ -21,6 +21,7 @@ export default ({ isVisible }: any) => {
   const [currentProject, setCurrentProject] = useState<Project>()
   const [highlightedProjects, setHighlightedProjects] = useState<Projects>()
 
+  // set highlighted projects and current project
   useEffect(() => {
     if (data) {
       const projects: Projects = JSON.parse(data)
@@ -33,6 +34,7 @@ export default ({ isVisible }: any) => {
     }
   }, [data])
 
+  // Go to next highlighted project
   const handleNext = () => {
     console.log('handling next')
     if (currentProject) {
@@ -46,6 +48,7 @@ export default ({ isVisible }: any) => {
     }
   }
 
+  // Go to previous highlighted project
   const handlePrevious = () => {
     console.log('handling previous')
     if (currentProject) {

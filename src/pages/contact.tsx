@@ -4,9 +4,6 @@ import { motion } from 'framer-motion'
 
 // eslint-disable-next-line react/display-name
 export default () => {
-  const [btnLeft, setBtnLeft] = useState(true)
-  const [formDirty, setFormDirty] = useState(true)
-
   const [formSent, setFormSent] = useState(false)
 
   const [firstName, setFirstName] = useState('')

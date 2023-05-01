@@ -1,31 +1,26 @@
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
 
-const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
+// Interfaces
+import { SkillCollection } from '@/models/SkillCollection'
 
-interface Skills {
-  categories: {
-    name: string
-    skills: {
-      name: string
-      startDate: string
-    }[]
-  }[]
-}
+const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 // eslint-disable-next-line react/display-name
 export default () => {
   const { data, error } = useSWR('/api/skillsdata', fetcher)
-  const [skills, setSkills] = useState<Skills>()
+  const [skills, setSkills] = useState<SkillCollection>()
 
+  // sets skills state with data from api
   useEffect(() => {
     if (data) {
-      const allSkills: Skills = JSON.parse(data)
+      const allSkills: SkillCollection = JSON.parse(data)
       setSkills(allSkills)
     }
   }, [data])
 
   const calculateExperience = (startDate: string) => {
+    // calculate years of experience
     const years =
       (Date.now() - new Date(startDate).getTime()) /
       (1000 * 60 * 60 * 24 * 365.25)
@@ -36,7 +31,6 @@ export default () => {
     } else if (years % 1 !== 0) {
       return Math.floor(years) + '+ years'
     }
-    // return Math.floor(years)
   }
 
   return (
