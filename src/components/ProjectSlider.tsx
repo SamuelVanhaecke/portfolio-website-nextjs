@@ -116,13 +116,15 @@ export default ({ isVisible }: any) => {
               }}
             >
               <div className="flex flex-col items-center justify-between">
-                <Image
-                  src={currentProject.coverImage}
-                  alt={''}
-                  width={currentProject.coverImageDimensions.width}
-                  height={currentProject.coverImageDimensions.height}
-                  className="h-auto w-full border border-black p-5 lg:w-auto xl:h-[40vh]"
-                />
+                <Link href={`/project/${currentProject.title}`}>
+                  <Image
+                    src={currentProject.coverImage}
+                    alt={''}
+                    width={currentProject.coverImageDimensions.width}
+                    height={currentProject.coverImageDimensions.height}
+                    className="h-auto w-full border border-black p-2 xl:p-5 lg:w-auto xl:h-[40vh]"
+                  />
+                </Link>
                 <h2 className="mt-8 mb-6 font-ilyas text-5xl uppercase md:mt-12">
                   {currentProject.title}
                 </h2>
