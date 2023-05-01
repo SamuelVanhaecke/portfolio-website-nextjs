@@ -34,9 +34,36 @@
     @apply bg-white;
   }
 
+  body {
+    overflow: overlay;
+  }
+
   ::selection {
     @apply bg-black text-white;
   }
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  @apply w-2;
+  @apply bg-white;
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+  @apply rounded-full;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-white;
+  @apply bg-opacity-60;
+  @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-opacity-100;
+  @apply cursor-pointer;
 }
 
 @tailwind components;

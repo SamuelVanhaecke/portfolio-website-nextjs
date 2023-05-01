@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion, useAnimation, useCycle } from 'framer-motion'
 
 import dropdownArrow from '../../public/images/nav/dropdown-arrow.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // eslint-disable-next-line react/display-name
 export default () => {
@@ -12,77 +12,110 @@ export default () => {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  // function to disable scrolling on page
+  const toggleScroll = () => {
+    const body = document.querySelector('body')
+    if (body) {
+      body.classList.toggle('overflow-hidden')
+    }
+  }
+
+  const handleHamburgerClick = () => {
+    setIsOpen(!isOpen)
+    toggleScroll()
+  }
+
+  // useeffect that checks if screenwidth is bigger than 768px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
-    <nav className="relative m-auto mt-10 mb-10 flex flex-row justify-between px-8 md:mb-24 md:flex-row md:px-16 xl:px-28">
-      <div className="flex flex-row items-start justify-between md:items-center">
+    <nav
+      className={`${
+        isOpen ? 'fixed top-0 z-50 h-screen w-screen bg-white' : 'relative'
+      } m-auto mb-10 flex flex-col px-8 pt-10 md:relative md:mb-24 md:flex-row md:justify-between md:bg-transparent md:px-16 xl:px-28`}
+    >
+      <div className="flex w-full flex-row items-center justify-between">
         <Link href="/">
           <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>
         </Link>
         {/* TODO: change and animate svg's */}
-        {/* <div className="md:hidden">
+        <div className="md:hidden">
           <button
             className="flex h-8 w-8 flex-col justify-between"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => handleHamburgerClick()}
           >
             {isOpen ? (
-              <svg viewBox="0 0 24 24">
-                <line
-                  x1="4"
-                  y1="12"
-                  x2="20"
-                  y2="12"
-                  stroke="black"
-                  stroke-width="2"
-                />
-                <line
-                  x1="12"
-                  y1="4"
-                  x2="12"
-                  y2="20"
-                  stroke="black"
-                  stroke-width="2"
-                />
+              <svg
+                width="38"
+                height="38"
+                viewBox="0 0 38 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M1 1L37 37" strokeWidth={2} stroke="#27272B" />
+                <path d="M37 1L0.999996 37" strokeWidth={2} stroke="#27272B" />
               </svg>
             ) : (
-              <svg viewBox="0 0 24 24">
-                <path d="M2 6h20v2H2V6zm0 5h20v2H2v-2zm0 5h20v2H2v-2z" />
+              <svg
+                width="36"
+                height="38"
+                viewBox="0 0 36 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1L36 1" strokeWidth={2} stroke="#27272B" />
+                <path d="M0 37L36 37" strokeWidth={2} stroke="#27272B" />
+                <path d="M0 19L36 19" strokeWidth={2} stroke="#27272B" />
               </svg>
             )}
           </button>
-        </div> */}
+        </div>
       </div>
 
       {/* <ul className="hidden items-center gap-16 md:flex md:gap-24"> */}
       <ul
-        className={`mt-0; flex w-full flex-col items-end justify-center gap-1 md:static md:mt-0 md:flex md:h-auto md:w-auto md:flex-row md:items-center md:gap-24 md:bg-transparent`}
+        className={`${
+          isOpen ? 'flex' : 'hidden'
+        } mt-48 w-full flex-col items-end justify-center gap-8 md:static md:mt-0 md:flex  md:h-auto md:w-auto md:flex-row md:items-center md:gap-24 md:bg-transparent`}
       >
         <li className="transition-all md:hover:pb-1">
-          <Link
-            href="/"
-            className={`${'pr-2 text-3xl font-[100] md:pr-0 md:text-lg md:font-light'} ${
-              router.pathname == '/'
-                ? 'border-r border-black font-light md:border-r-0 md:border-b'
-                : 'font-light'
-            }
+          <Link href="/">
+            <p
+              className={`${'pr-4 text-6xl font-extralight md:pr-0 md:text-lg md:font-light'} ${
+                router.pathname == '/'
+                  ? 'border-r-2 border-black md:border-r-0 md:border-b'
+                  : ''
+              }
             `}
-          >
-            Home
+            >
+              Home
+            </p>
           </Link>
         </li>
         <li className="transition-all md:hover:pb-1">
-          <Link
-            href="/portfolio"
-            className={`${'pr-2 text-3xl font-[100] md:pr-0 md:text-lg md:font-light'} ${
-              router.pathname == '/portfolio'
-                ? 'border-r border-black font-light md:border-r-0 md:border-b'
-                : 'font-light'
-            }`}
-          >
-            Portfolio
+          <Link href="/portfolio">
+            <p
+              className={`${'pr-4 text-6xl font-extralight md:pr-0 md:text-lg md:font-light'} ${
+                router.pathname == '/portfolio'
+                  ? 'border-r-2 border-black md:border-r-0 md:border-b'
+                  : ''
+              }
+            `}
+            >
+              Portfolio
+            </p>
           </Link>
         </li>
         <li className="hidden flex-col items-center md:flex">
-          <button className="peer flex items-center gap-1 font-light">
+          <button className="peer flex items-center gap-1 text-lg font-light">
             Socials
             <Image src={dropdownArrow} alt="arrow pointing down"></Image>
           </button>
@@ -111,15 +144,16 @@ export default () => {
           </div>
         </li>
         <li>
-          <Link
-            href="/contact"
-            className={`${'border-black bg-opacity-0 py-0 pr-2 text-3xl font-[100] transition-all duration-150 ease-out hover:text-white md:rounded-full md:border md:border-solid md:py-2.5 md:px-5 md:text-lg md:font-light md:hover:bg-black md:hover:bg-opacity-100'}, ${
-              router.pathname == '/contact'
-                ? 'rounded-none border-r border-black font-light md:border-b'
-                : 'font-light'
-            }`}
-          >
-            Contact
+          <Link href="/contact">
+            <p
+              className={`${'border-black bg-opacity-0 py-0 pr-4 text-6xl font-extralight transition-all duration-150 ease-out hover:text-white md:rounded-full md:border md:border-solid md:py-1.5 md:px-5 md:text-lg md:font-light md:hover:bg-black md:hover:bg-opacity-100'}, ${
+                router.pathname == '/contact'
+                  ? 'rounded-none border-r-2 border-black md:border-b'
+                  : ''
+              }`}
+            >
+              Contact
+            </p>
           </Link>
         </li>
       </ul>
