@@ -6,6 +6,9 @@ import { motion, useAnimation, useCycle } from 'framer-motion'
 import dropdownArrow from '../../public/images/nav/dropdown-arrow.svg'
 import { useEffect, useState } from 'react'
 
+// Components
+import BackgroundGradients from './BackgroundGradients'
+
 // eslint-disable-next-line react/display-name
 export default () => {
   const router = useRouter()
@@ -13,28 +16,28 @@ export default () => {
   const [isOpen, setIsOpen] = useState(false)
 
   // function to disable scrolling on page
-  const toggleScroll = () => {
-    const body = document.querySelector('body')
-    if (body) {
-      body.classList.toggle('overflow-hidden')
-    }
-  }
+  // const toggleScroll = () => {
+  //   const body = document.querySelector('body')
+  //   if (body) {
+  //     body.classList.toggle('overflow-hidden')
+  //   }
+  // }
 
+  // Function that handles hamburgermenu
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen)
-    toggleScroll()
+    // toggleScroll()
   }
 
-  // useeffect that checks if screenwidth is bigger than 768px
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsOpen(false)
-      }
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth > 768) {
+  //       setIsOpen(false)
+  //     }
+  //   }
+  //   window.addEventListener('resize', handleResize)
+  //   return () => window.removeEventListener('resize', handleResize)
+  // }, [])
 
   return (
     <nav
@@ -42,6 +45,8 @@ export default () => {
         isOpen ? 'fixed top-0 z-50 h-screen w-screen bg-white' : 'relative'
       } m-auto mb-10 flex flex-col px-8 pt-10 md:relative md:mb-24 md:flex-row md:justify-between md:bg-transparent md:px-16 xl:px-28`}
     >
+      <BackgroundGradients show={isOpen.valueOf()} />
+      {/* <BackgroundGradients className={`${isOpen ? 'block' : 'hidden'} `} /> */}
       <div className="flex w-full flex-row items-center justify-between">
         <Link href="/">
           <h1 className="font-ilyas text-5xl uppercase text-black">Samuel</h1>
@@ -59,6 +64,11 @@ export default () => {
                 viewBox="0 0 38 38"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                // className={`${
+                //   isOpen
+                //     ? 'rotate-180 duration-200 ease-in'
+                //     : 'rotate-180 duration-200 ease-in'
+                // }`}
               >
                 <path d="M1 1L37 37" strokeWidth={2} stroke="#27272B" />
                 <path d="M37 1L0.999996 37" strokeWidth={2} stroke="#27272B" />
@@ -70,6 +80,7 @@ export default () => {
                 viewBox="0 0 36 38"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                // className={`${isOpen ? '' : 'rotate-180 duration-200 ease-in'}`}
               >
                 <path d="M0 1L36 1" strokeWidth={2} stroke="#27272B" />
                 <path d="M0 37L36 37" strokeWidth={2} stroke="#27272B" />

@@ -6,7 +6,7 @@ import orangeGradient from '../../public/images/orange_big.webp'
 import blueGradient from '../../public/images/blue_big.webp'
 
 // eslint-disable-next-line react/display-name
-export default () => {
+export default ({ show = true }) => {
   const isBrowser = () => typeof window !== 'undefined'
 
   const [positions1, setPositions1] = useState({
@@ -77,7 +77,11 @@ export default () => {
   }, [])
 
   return positions1.x != 0 && positions1.y != 0 ? (
-    <div className="fixed top-0 left-0 -z-40 h-screen w-screen">
+    <div
+      className={`${
+        show ? 'fixed' : 'hidden'
+      } top-0 left-0 -z-40 h-screen w-screen`}
+    >
       <div
         className={`absolute h-[700px] w-[700px] sm:h-[1400px] sm:w-[1400px] lg:h-[2000px] lg:w-[2000px]`}
         style={{

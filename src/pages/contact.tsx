@@ -56,7 +56,7 @@ export default () => {
     }
   }
 
-  // create a function that handles the form validation
+  // Will check if all fields in form are filled out and are correct format
   const formValidation = () => {
     let error = false
 
@@ -67,7 +67,7 @@ export default () => {
       phone: '',
       message: '',
     }
-    // check if all fields in form are filled out and are correct format, if not add error message to state
+    // Add errormessage when field is empty
     if (!firstName) {
       errors.firstName = 'Please enter your first name'
       error = true
@@ -84,13 +84,13 @@ export default () => {
       error = true
     }
 
-    // check if email is an email format with regex /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    // check if email is an email format
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       errors.email = 'Please enter a valid email address'
       error = true
     }
 
-    // if phone is filled in check if phone is a phone format with regex /^\+(?:[0-9] ?){6,14}[0-9]$/
+    // if phone is filled in check if phone is a phone format
     if (phone.length > 0 && !phone.match(/^\+(?:[0-9] ?){6,14}[0-9]$/)) {
       errors.phone = 'Please enter a valid phone number'
       error = true
@@ -106,7 +106,6 @@ export default () => {
 
   return (
     <Layout>
-      {/* <BackgroundGradientOrange /> */}
       <div className="w-full max-w-screen-lg">
         <h1 className="mb-12 font-ilyas text-6xl uppercase md:mb-20 md:text-7xl lg:text-8xl">
           Let&apos;s work <br /> together
