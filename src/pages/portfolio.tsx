@@ -5,6 +5,9 @@ import useSWR from 'swr'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
 
+// Interfaces
+import { Project } from '@/models/Project'
+
 const fetcher = (url: RequestInfo | URL) => fetch(url).then(res => res.json())
 
 // eslint-disable-next-line react/display-name
@@ -15,7 +18,7 @@ export default () => {
 
   if (!data) return <div>Loading...</div>
 
-  const projects = JSON.parse(data)
+  const projects: Project = JSON.parse(data)
   const classNames = ['2xl:self-start', '2xl:self-center', '2xl:self-end']
 
   return (

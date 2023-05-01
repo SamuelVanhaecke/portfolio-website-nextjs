@@ -1,9 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import useSWR from 'swr'
 
 // Components
-import Nav from '../components/Nav'
 import ProjectSlider from '../components/ProjectSlider'
 import Skills from '../components/Skills'
 import Layout from '../components/Layout'
